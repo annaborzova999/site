@@ -4,41 +4,58 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="./style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Завод Юпитер — оптика специального назначения. О предприятии, продукция и вакансии.">
     <title>Завод Юпитер — оптика специального назначения</title>
 </head>
 <body id="home">
     <a class="skip-link" href="#main">К содержимому</a>
+    
     <header class="header wrap">
-        <a class="logo-slot placeholder" href="#home" aria-label="Завод Юпитер — главная">Место для логотипа</a>
+        <a class="logo-slot placeholder" href="index.html" aria-label="Завод Юпитер — главная">Место для логотипа</a>
         <nav aria-label="Основная навигация">
-            <a href="#home">Главная</a>
-            <a href="#careers">Вакансии</a>
-            <a href="#about">О нас</a>
-            <a href="#contacts">Контакты</a>
+            <a href="index.html">Главная</a>
+            <a href="careers.html">Вакансии</a> <!-- Ссылка на файл -->
+            <a href="about.html">О нас</a>      <!-- Ссылка на файл -->
+            <a href="#contacts">Контакты</a>     <!-- Осталась якорем, так как контакты на главной -->
             <a href="#products">Продукция</a>
         </nav>
     </header>
+
     <main id="main">
+        <!-- HERO SECTION -->
         <section class="hero wrap" aria-labelledby="hero-title">
             <p class="eyebrow">Точность. Технологии. Надёжность.</p>
             <h1 id="hero-title">ЗАВОД ЮПИТЕР</h1>
             <p class="hero-subtitle">Закрытое акционерное общество</p>
-            <a class="button" href="#about">О нас <span aria-hidden="true">↗</span></a>
+            <a class="button" href="about.html">О нас <span aria-hidden="true">↗</span></a>
         </section>
 
+        <!-- PRODUCT SECTION -->
         <section class="product-feature" id="products" aria-labelledby="product-title">
-            <div class="feature-slot placeholder"><span class="slot-label">01 / Изображение производства или продукции<span>Широкоформатный кадр · 16:7</span></span></div>
+            <!-- Сюда потом вставишь фото через CSS background-image -->
+            <div class="feature-slot placeholder">
+                <span class="slot-label">01 / Изображение производства или продукции<span>Широкоформатный кадр · 16:7</span></span>
+            </div>
+            
             <div class="product-card">
                 <p class="eyebrow">Направления производства</p>
                 <h2 id="product-title">Оптика специального назначения</h2>
-                <ul><li>Приборы ночного видения</li><li>Коллиматорные прицелы</li><li>Зрительные трубки</li><li>Аксессуары и крепления</li></ul>
+                <ul>
+                    <li>Приборы ночного видения</li>
+                    <li>Коллиматорные прицелы</li>
+                    <li>Зрительные трубки</li>
+                    <li>Аксессуары и крепления</li>
+                </ul>
                 <a class="text-link" href="#contacts">Связаться с предприятием <span aria-hidden="true">↗</span></a>
             </div>
         </section>
 
+        <!-- PATENTS SECTION -->
         <section class="patents wrap" aria-labelledby="patents-title">
-            <div class="section-heading centered"><p class="eyebrow">Разработки предприятия</p><h2 id="patents-title">Патентный портфель предприятия</h2><p>Наши патенты — гарантия безупречной работы оптики</p></div>
+            <div class="section-heading centered">
+                <p class="eyebrow">Разработки предприятия</p>
+                <h2 id="patents-title">Патентный портфель предприятия</h2>
+                <p>Наши патенты — гарантия безупречной работы оптики</p>
+            </div>
             <div class="patent-grid">
                 <figure><div class="patent-slot placeholder"><span>Место для патента<span>Документ 01</span></span></div><figcaption><span>01</span> Патент на изобретение</figcaption></figure>
                 <figure><div class="patent-slot placeholder"><span>Место для патента<span>Документ 02</span></span></div><figcaption><span>02</span> Патент на изобретение</figcaption></figure>
@@ -47,23 +64,21 @@
             </div>
         </section>
 
-        <section class="about wrap" id="about" aria-labelledby="about-title">
-            <div class="about-slot placeholder"><span>Место для фотографии завода<span>История предприятия · 4:3</span></span></div>
-            <div class="about-copy"><p class="eyebrow">О предприятии</p><h2 id="about-title">Точность, проверенная временем</h2><p>История завода «Юпитер» началась в 1973 году с производства оптической техники.</p><p>Сегодня предприятие объединяет опыт специалистов и технологии производства оптики специального назначения.</p><div class="history-mark"><strong>1973</strong><span>год основания<br>предприятия</span></div></div>
-        </section>
-
-        <section class="careers wrap" id="careers" aria-labelledby="careers-title">
-            <div class="section-heading"><p class="eyebrow">Работа на заводе</p><h2 id="careers-title">Вакансии</h2><p>Направления из референса. Наличие вакансий уточняйте у предприятия.</p></div>
-            <div class="vacancy-list">
-                <details><summary>Наладчик оборудования оптического производства<span aria-hidden="true">+</span></summary><p>Здесь можно разместить обязанности, требования и условия работы.</p><a class="text-link" href="#contacts">Уточнить условия ↗</a></details>
-                <details><summary>Инженер-конструктор<span aria-hidden="true">+</span></summary><p>Здесь можно разместить обязанности, требования и условия работы.</p><a class="text-link" href="#contacts">Уточнить условия ↗</a></details>
-                <details><summary>Инженер-технолог<span aria-hidden="true">+</span></summary><p>Здесь можно разместить обязанности, требования и условия работы.</p><a class="text-link" href="#contacts">Уточнить условия ↗</a></details>
-                <details><summary>Экономист<span aria-hidden="true">+</span></summary><p>Здесь можно разместить обязанности, требования и условия работы.</p><a class="text-link" href="#contacts">Уточнить условия ↗</a></details>
-                <details><summary>Оператор / наладчик станка с ЧПУ<span aria-hidden="true">+</span></summary><p>Здесь можно разместить обязанности, требования и условия работы.</p><a class="text-link" href="#contacts">Уточнить условия ↗</a></details>
+        <!-- CONTACTS SECTION (Оставил на главной, так как это логично) -->
+        <section class="contacts wrap" id="contacts" aria-labelledby="contacts-title">
+            <div>
+                <p class="eyebrow">Всегда на связи</p>
+                <h2 id="contacts-title">Контакты</h2>
+                <p>Контактный телефон из макета</p>
             </div>
+            <a class="phone" href="tel:+78166620385">+7 (816) 662-03-85 <span aria-hidden="true">↗</span></a>
         </section>
-        <section class="contacts wrap" id="contacts" aria-labelledby="contacts-title"><div><p class="eyebrow">Всегда на связи</p><h2 id="contacts-title">Контакты</h2><p>Контактный телефон из макета</p></div><a class="phone" href="tel:+78166620385">+7 (816) 662-03-85 <span aria-hidden="true">↗</span></a></section>
     </main>
-    <footer class="footer wrap"><span>ЗАО «Завод Юпитер»</span><span>Шаблон корпоративного сайта</span><a href="#home">Наверх ↑</a></footer>
+
+    <footer class="footer wrap">
+        <span>ЗАО «Завод Юпитер»</span>
+        <span>Шаблон корпоративного сайта</span>
+        <a href="#home">Наверх ↑</a>
+    </footer>
 </body>
 </html>
