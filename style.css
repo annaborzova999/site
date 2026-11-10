@@ -1,6 +1,635 @@
-:root{color-scheme:dark;--bg:#1b2433;--panel:#252f3e;--text:#e2e7ed;--muted:#99a3b1;--line:#414b5a;--accent:#d83b47}
-*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:30px}body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,Helvetica,sans-serif;line-height:1.5}a{color:inherit;text-decoration:none}a:focus-visible,summary:focus-visible{outline:2px solid #f17882;outline-offset:6px}.wrap{width:calc(100% - 128px);max-width:1728px;margin-inline:auto}.header{min-height:116px;display:flex;align-items:center;justify-content:space-between;gap:40px}.placeholder{border:1px dashed #687383;background:#26303e;color:#a8b1bd;display:flex;align-items:center;justify-content:center;text-align:center}.placeholder span span{display:block;font-size:12px;letter-spacing:.06em;margin-top:10px;color:#8792a2}.logo-slot{width:204px;height:64px;font-size:12px;letter-spacing:.08em;flex-shrink:0}.header nav{display:flex;gap:clamp(24px,4vw,76px)}nav a{font-size:14px;font-weight:600;padding:9px 0;border-bottom:1px solid #8b95a4;transition:color .2s}nav a:hover,.text-link:hover{color:#f17882}.hero{text-align:center;padding:92px 0 64px}.eyebrow{text-transform:uppercase;font-size:11px;letter-spacing:.19em;color:var(--muted);margin:0 0 20px}h1{font-size:clamp(36px,3.6vw,68px);line-height:1.1;letter-spacing:-.035em;margin:0 0 10px;font-weight:600}.hero-subtitle{text-transform:uppercase;font-size:clamp(12px,1.2vw,19px);color:var(--muted);margin:0}.button{display:inline-flex;justify-content:space-between;align-items:center;gap:65px;border:1px solid #616b78;background:#303a49;border-radius:40px;padding:11px 32px;margin-top:53px;font-size:18px;transition:background .2s}.button:hover{background:#414d5f}.product-feature{max-width:1920px;margin:auto;min-height:560px;position:relative;border-radius:24px;overflow:hidden;background:var(--panel);display:flex;align-items:center;justify-content:flex-end;padding:64px 6%}.feature-slot{position:absolute;inset:0;border-radius:24px;justify-content:flex-start;padding:6%;text-align:left;background:#222d3b}.slot-label{max-width:40%;font-size:14px;letter-spacing:.035em}.product-card{position:relative;width:450px;max-width:48%;padding:48px 40px;background:#444d5b;border:1px solid #66707e;border-radius:40px}.product-card .eyebrow{font-size:10px;color:#c0c6cf}h2{font-weight:500;font-size:clamp(28px,2.7vw,48px);line-height:1.15;letter-spacing:-.025em;margin:0 0 18px}.product-card h2{font-size:30px;font-weight:600}.product-card ul{list-style:none;padding:0;margin:35px 0;font-size:18px;line-height:1.7}.text-link{display:inline-block;font-size:13px;border-bottom:1px solid #8b95a4;padding-bottom:7px}.patents{padding-block:80px 100px}.section-heading{margin-bottom:52px}.centered{text-align:center}.section-heading p:not(.eyebrow){color:var(--muted);font-size:17px;margin:0}.patent-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:40px}figure{margin:0}.patent-slot{aspect-ratio: .76;border-radius:12px;background:#343e4c;padding:25px;font-size:14px}figcaption{display:flex;gap:18px;font-size:12px;margin-top:18px;color:#b6beca}figcaption>span{color:#758294}.about{display:grid;grid-template-columns:1.05fr 1fr;gap:8%;padding-block:85px;border-top:1px solid var(--line)}.about-slot{aspect-ratio:4/3;border-radius:16px}.about-copy{align-self:center}.about-copy>p:not(.eyebrow){color:#adb6c3;font-size:17px;max-width:550px}.history-mark{display:flex;gap:25px;align-items:center;margin-top:30px}.history-mark strong{font-size:58px;line-height:1;font-weight:400}.history-mark span{color:var(--muted);font-size:12px}.careers{padding-block:80px 100px;border-top:1px solid var(--line)}.vacancy-list{border-top:1px solid var(--line)}details{border-bottom:1px solid var(--line);padding:0 24px}summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:26px 0;font-size:18px}summary::-webkit-details-marker{display:none}summary span{font-size:28px;color:var(--muted);transition:transform .2s}details[open] summary span{transform:rotate(45deg)}details p{color:var(--muted);margin:0 0 18px}details .text-link{margin-bottom:25px}.contacts{border-top:1px solid var(--line);padding-block:60px;display:flex;align-items:center;justify-content:space-between;gap:30px}.contacts p:not(.eyebrow){color:var(--muted);font-size:13px}.phone{font-size:clamp(22px,2.5vw,42px);white-space:nowrap}.phone span{color:var(--muted);margin-left:20px}.footer{border-top:1px solid var(--line);padding-block:28px;display:flex;justify-content:space-between;gap:20px;color:var(--muted);font-size:12px}.skip-link{position:absolute;top:10px;left:10px;transform:translateY(-200%);padding:12px;background:var(--bg);z-index:10}.skip-link:focus{transform:none}
-@media(min-width:1800px){.hero{padding-block:110px 75px}.product-feature{min-height:700px}.patent-slot{padding:40px}}
-@media(max-width:1000px){.wrap{width:calc(100% - 64px)}.header{gap:24px}.header nav{gap:22px}.logo-slot{width:160px}.hero{padding-top:70px}.product-feature{min-height:480px;padding:40px}.product-card{padding:32px;max-width:52%}.product-card h2{font-size:26px}.product-card ul{font-size:16px}.patent-grid{gap:20px}.about{gap:40px}.phone{font-size:26px}}
-@media(max-width:700px){.wrap{width:calc(100% - 40px)}.header{padding-block:22px;flex-direction:column;align-items:flex-start;gap:22px}.logo-slot{height:50px}.header nav{width:100%;gap:10px 22px;flex-wrap:wrap}nav a{font-size:12px}.hero{padding-block:55px 45px}.hero .eyebrow{font-size:9px}.button{margin-top:32px}.product-feature{margin-inline:12px;padding:0;display:block;border-radius:16px}.feature-slot{position:relative;min-height:240px;border-radius:16px 16px 0 0;padding:25px;justify-content:center;text-align:center}.slot-label{max-width:100%;font-size:12px}.product-card{width:100%;max-width:none;padding:30px;border-radius:0 0 16px 16px}.product-card ul{margin-block:24px}.patents{padding-block:55px}.section-heading{margin-bottom:32px}.section-heading p:not(.eyebrow){font-size:14px}.patent-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 16px}.patent-slot{font-size:12px;padding:12px}figcaption{font-size:10px;gap:8px}.about{grid-template-columns:1fr;padding-block:50px;gap:32px}.about-copy>p:not(.eyebrow){font-size:15px}.careers{padding-block:50px}details{padding-inline:4px}summary{font-size:15px;padding-block:22px}.contacts{align-items:flex-start;flex-direction:column;padding-block:45px}.phone{font-size:24px}.phone span{margin-left:5px}.footer{flex-wrap:wrap;font-size:11px}.footer span:nth-child(2){display:none}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+/* Цвета и настройки темы */
+:root {
+    color-scheme: dark;
+    --bg: #1b2433;
+    --panel: #252f3e;
+    --text: #e2e7ed;
+    --muted: #99a3b1;
+    --line: #414b5a;
+    --accent: #d83b47;
+}
+
+/* Базовые стили */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 30px;
+}
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.5;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+a:focus-visible,
+summary:focus-visible {
+    outline: 2px solid #f17882;
+    outline-offset: 6px;
+}
+
+.wrap {
+    width: calc(100% - 128px);
+    max-width: 1728px;
+    margin-inline: auto;
+}
+
+/* Шапка и навигация */
+.header {
+    min-height: 116px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+/* Ячейки для изображений */
+.placeholder {
+    border: 1px dashed #687383;
+    background: #26303e;
+    color: #a8b1bd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.placeholder span span {
+    display: block;
+    font-size: 12px;
+    letter-spacing: .06em;
+    margin-top: 10px;
+    color: #8792a2;
+}
+
+.logo-slot {
+    width: 204px;
+    height: 64px;
+    font-size: 12px;
+    letter-spacing: .08em;
+    flex-shrink: 0;
+}
+
+.header nav {
+    display: flex;
+    gap: clamp(24px, 4vw, 76px);
+}
+
+nav a {
+    font-size: 14px;
+    font-weight: 600;
+    padding: 9px 0;
+    border-bottom: 1px solid #8b95a4;
+    transition: color .2s;
+}
+
+nav a:hover,
+.text-link:hover {
+    color: #f17882;
+}
+
+/* Первый экран */
+.hero {
+    text-align: center;
+    padding: 92px 0 64px;
+}
+
+.eyebrow {
+    text-transform: uppercase;
+    font-size: 11px;
+    letter-spacing: .19em;
+    color: var(--muted);
+    margin: 0 0 20px;
+}
+
+h1 {
+    font-size: clamp(36px, 3.6vw, 68px);
+    line-height: 1.1;
+    letter-spacing: -.035em;
+    margin: 0 0 10px;
+    font-weight: 600;
+}
+
+.hero-subtitle {
+    text-transform: uppercase;
+    font-size: clamp(12px, 1.2vw, 19px);
+    color: var(--muted);
+    margin: 0;
+}
+
+.button {
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 65px;
+    border: 1px solid #616b78;
+    background: #303a49;
+    border-radius: 40px;
+    padding: 11px 32px;
+    margin-top: 53px;
+    font-size: 18px;
+    transition: background .2s;
+}
+
+.button:hover {
+    background: #414d5f;
+}
+
+/* Продукция */
+.product-feature {
+    max-width: 1920px;
+    margin: auto;
+    min-height: 560px;
+    position: relative;
+    border-radius: 24px;
+    overflow: hidden;
+    background: var(--panel);
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 64px 6%;
+}
+
+.feature-slot {
+    position: absolute;
+    inset: 0;
+    border-radius: 24px;
+    justify-content: flex-start;
+    padding: 6%;
+    text-align: left;
+    background: #222d3b;
+}
+
+.slot-label {
+    max-width: 40%;
+    font-size: 14px;
+    letter-spacing: .035em;
+}
+
+.product-card {
+    position: relative;
+    width: 450px;
+    max-width: 48%;
+    padding: 48px 40px;
+    background: #444d5b;
+    border: 1px solid #66707e;
+    border-radius: 40px;
+}
+
+.product-card .eyebrow {
+    font-size: 10px;
+    color: #c0c6cf;
+}
+
+h2 {
+    font-weight: 500;
+    font-size: clamp(28px, 2.7vw, 48px);
+    line-height: 1.15;
+    letter-spacing: -.025em;
+    margin: 0 0 18px;
+}
+
+.product-card h2 {
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.product-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 35px 0;
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+.text-link {
+    display: inline-block;
+    font-size: 13px;
+    border-bottom: 1px solid #8b95a4;
+    padding-bottom: 7px;
+}
+
+/* Патенты */
+.patents {
+    padding-block: 80px 100px;
+}
+
+.section-heading {
+    margin-bottom: 52px;
+}
+
+.centered {
+    text-align: center;
+}
+
+.section-heading p:not(.eyebrow) {
+    color: var(--muted);
+    font-size: 17px;
+    margin: 0;
+}
+
+.patent-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 40px;
+}
+
+figure {
+    margin: 0;
+}
+
+.patent-slot {
+    aspect-ratio: .76;
+    border-radius: 12px;
+    background: #343e4c;
+    padding: 25px;
+    font-size: 14px;
+}
+
+figcaption {
+    display: flex;
+    gap: 18px;
+    font-size: 12px;
+    margin-top: 18px;
+    color: #b6beca;
+}
+
+figcaption > span {
+    color: #758294;
+}
+
+/* О предприятии */
+.about {
+    display: grid;
+    grid-template-columns: 1.05fr 1fr;
+    gap: 8%;
+    padding-block: 85px;
+    border-top: 1px solid var(--line);
+}
+
+.about-slot {
+    aspect-ratio: 4/3;
+    border-radius: 16px;
+}
+
+.about-copy {
+    align-self: center;
+}
+
+.about-copy > p:not(.eyebrow) {
+    color: #adb6c3;
+    font-size: 17px;
+    max-width: 550px;
+}
+
+.history-mark {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.history-mark strong {
+    font-size: 58px;
+    line-height: 1;
+    font-weight: 400;
+}
+
+.history-mark span {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+/* Вакансии */
+.careers {
+    padding-block: 80px 100px;
+    border-top: 1px solid var(--line);
+}
+
+.vacancy-list {
+    border-top: 1px solid var(--line);
+}
+
+details {
+    border-bottom: 1px solid var(--line);
+    padding: 0 24px;
+}
+
+summary {
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 26px 0;
+    font-size: 18px;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary span {
+    font-size: 28px;
+    color: var(--muted);
+    transition: transform .2s;
+}
+
+details[open] summary span {
+    transform: rotate(45deg);
+}
+
+details p {
+    color: var(--muted);
+    margin: 0 0 18px;
+}
+
+details .text-link {
+    margin-bottom: 25px;
+}
+
+/* Контакты */
+.contacts {
+    border-top: 1px solid var(--line);
+    padding-block: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.contacts p:not(.eyebrow) {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.phone {
+    font-size: clamp(22px, 2.5vw, 42px);
+    white-space: nowrap;
+}
+
+.phone span {
+    color: var(--muted);
+    margin-left: 20px;
+}
+
+/* Подвал */
+.footer {
+    border-top: 1px solid var(--line);
+    padding-block: 28px;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+/* Доступность */
+.skip-link {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    transform: translateY(-200%);
+    padding: 12px;
+    background: var(--bg);
+    z-index: 10;
+}
+
+.skip-link:focus {
+    transform: none;
+}
+
+@media (min-width: 1800px) {
+    .hero {
+        padding-block: 110px 75px;
+    }
+
+    .product-feature {
+        min-height: 700px;
+    }
+
+    .patent-slot {
+        padding: 40px;
+    }
+
+}
+
+@media (max-width: 1000px) {
+    .wrap {
+        width: calc(100% - 64px);
+    }
+
+    .header {
+        gap: 24px;
+    }
+
+    .header nav {
+        gap: 22px;
+    }
+
+    .logo-slot {
+        width: 160px;
+    }
+
+    .hero {
+        padding-top: 70px;
+    }
+
+    .product-feature {
+        min-height: 480px;
+        padding: 40px;
+    }
+
+    .product-card {
+        padding: 32px;
+        max-width: 52%;
+    }
+
+    .product-card h2 {
+        font-size: 26px;
+    }
+
+    .product-card ul {
+        font-size: 16px;
+    }
+
+    .patent-grid {
+        gap: 20px;
+    }
+
+    .about {
+        gap: 40px;
+    }
+
+    .phone {
+        font-size: 26px;
+    }
+
+}
+
+@media (max-width: 700px) {
+    .wrap {
+        width: calc(100% - 40px);
+    }
+
+    .header {
+        padding-block: 22px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 22px;
+    }
+
+    .logo-slot {
+        height: 50px;
+    }
+
+    .header nav {
+        width: 100%;
+        gap: 10px 22px;
+        flex-wrap: wrap;
+    }
+
+    nav a {
+        font-size: 12px;
+    }
+
+    .hero {
+        padding-block: 55px 45px;
+    }
+
+    .hero .eyebrow {
+        font-size: 9px;
+    }
+
+    .button {
+        margin-top: 32px;
+    }
+
+    .product-feature {
+        margin-inline: 12px;
+        padding: 0;
+        display: block;
+        border-radius: 16px;
+    }
+
+    .feature-slot {
+        position: relative;
+        min-height: 240px;
+        border-radius: 16px 16px 0 0;
+        padding: 25px;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .slot-label {
+        max-width: 100%;
+        font-size: 12px;
+    }
+
+    .product-card {
+        width: 100%;
+        max-width: none;
+        padding: 30px;
+        border-radius: 0 0 16px 16px;
+    }
+
+    .product-card ul {
+        margin-block: 24px;
+    }
+
+    .patents {
+        padding-block: 55px;
+    }
+
+    .section-heading {
+        margin-bottom: 32px;
+    }
+
+    .section-heading p:not(.eyebrow) {
+        font-size: 14px;
+    }
+
+    .patent-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 28px 16px;
+    }
+
+    .patent-slot {
+        font-size: 12px;
+        padding: 12px;
+    }
+
+    figcaption {
+        font-size: 10px;
+        gap: 8px;
+    }
+
+    .about {
+        grid-template-columns: 1fr;
+        padding-block: 50px;
+        gap: 32px;
+    }
+
+    .about-copy > p:not(.eyebrow) {
+        font-size: 15px;
+    }
+
+    .careers {
+        padding-block: 50px;
+    }
+
+    details {
+        padding-inline: 4px;
+    }
+
+    summary {
+        font-size: 15px;
+        padding-block: 22px;
+    }
+
+    .contacts {
+        align-items: flex-start;
+        flex-direction: column;
+        padding-block: 45px;
+    }
+
+    .phone {
+        font-size: 24px;
+    }
+
+    .phone span {
+        margin-left: 5px;
+    }
+
+    .footer {
+        flex-wrap: wrap;
+        font-size: 11px;
+    }
+
+    .footer span:nth-child(2) {
+        display: none;
+    }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    * {
+        transition: none !important;
+    }
+
+}
