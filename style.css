@@ -1,686 +1,627 @@
-/* Цвета и настройки темы */
-:root {
-    color-scheme: dark;
-    --bg: #1b2433;
-    --panel: #252f3e;
-    --text: #e2e7ed;
-    --muted: #99a3b1;
-    --line: #414b5a;
-    --accent: #d83b47;
-}
-
-/* Базовые стили */
-* {
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-    scroll-padding-top: 30px;
+/* border-box: ширина блока включает в себя рамки и отступы, чтобы ничего не разъезжалось звезда у скобки говорит что ко всему относится  */
+* { 
+    box-sizing: border-box; 
 }
 
 body {
     margin: 0;
-    background: var(--bg);
-    color: var(--text);
-    font-family: Arial, Helvetica, sans-serif;
-    line-height: 1.5;
+    background: #1b2433;
+    color: #e2e7ed;
+    font-family: Arial, sans-serif;
+    line-height: 1.5;  /* Расстояние между строками текста */
 }
 
-a {
-    color: inherit;
-    text-decoration: none;
+p { 
+    margin: 0 0 15px 0; 
+}
+a { /* Настройки для всех ссылок */
+    color: inherit; 
+    text-decoration: none; 
+}
+img { 
+    max-width: 100%; 
+    display: block; /* картинку квадратным блоком (чтобы не было зазоров снизу) */
 }
 
-a:focus-visible,
-summary:focus-visible {
-    outline: 2px solid #f17882;
-    outline-offset: 6px;
-}
-
-.wrap {
-    width: calc(100% - 128px);
-    max-width: 1728px;
-    margin-inline: auto;
-}
-
-/* =========================================
-   ИСПРАВЛЕННАЯ ШАПКА И НАВИГАЦИЯ
-   ========================================= */
-.header {
+/*  ШАПКА  */
+.shapka {
     min-height: 116px;
+    width: calc(100% - 128px); /* ширина на весь экран но чтоб были отступы ставим фиксированное числ -128 тк браузер делит на 2 и будет с двух сторон 64 */
+    max-width: 1728px;
+    margin: 0 auto;  /*  сверху/снизу 0, слева/справа auto (браузер сам центрирует) */
     display: flex;
     align-items: center;
-    justify-content: space-around;
-    gap: 40px;
+    justify-content: space-between;
 }
 
-/* НОВЫЕ СТИЛИ ДЛЯ ЛОГОТИПА */
-.logo-slot {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    /* Убрали жесткие размеры, чтобы логотип не был маленьким в большой рамке */
-    padding: 10px; 
-    border: none !important;       /* Убираем пунктирную рамку placeholder */
-    background: transparent !important; /* Убираем серый фон */
-    flex-shrink: 0;
+.logo-img { 
+    height: 50px; 
+    display: block; /* картинку квадратным блоком (чтобы не было зазоров снизу) */
+}
+.menu { /*  выставили все рядом (контейнер)  */
+    display: flex; 
+    gap: 30px; 
 }
 
-.logo-slot img {
-    height: 50px; /* Оптимальная высота для шапки */
-    width: auto;  /* Ширина подстроится пропорционально */
-    object-fit: contain;
-    display: block;
-}
-
-/* ИСПРАВЛЕННОЕ МЕНЮ (чтобы не разъезжалось) */
-.header nav {
-    display: flex;
-    gap: 30px; /* Фиксированный отступ вместо растягивающегося clamp */
-    align-items: center;
-}
-
-nav a {
+.menu a { /*  нашли все что лежит в этом контейнере и задали цвета  */
     font-size: 14px;
     font-weight: 600;
-    padding: 9px 0;
     border-bottom: 1px solid #8b95a4;
-    transition: color .2s;
-    white-space: nowrap; /* Чтобы ссылки не переносились */
+    padding-bottom: 4px;
 }
 
-nav a:hover,
-.text-link:hover {
-    color: #f17882;
-}
+.menu a:hover {
+     color: #f17882;
+     }
 
-/* =========================================
-   ОСТАЛЬНЫЕ СТИЛИ (БЕЗ ИЗМЕНЕНИЙ)
-   ========================================= */
-
-/* Ячейки для изображений */
-.placeholder {
-    border: 1px dashed #687383;
-    background: #26303e;
-    color: #a8b1bd;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
-
-.placeholder span span {
-    display: block;
-    font-size: 12px;
-    letter-spacing: .06em;
-    margin-top: 10px;
-    color: #8792a2;
-}
-
-/* Первый экран */
-.hero {
+/*  ГЛАВНАЯ СТРАНИЦА */
+.pervyy-ekran {
+    width: calc(100% - 128px);
+    max-width: 1728px;
+    margin: 0 auto;
     text-align: center;
     padding: 92px 0 64px;
 }
 
-.eyebrow {
-    text-transform: uppercase;
-    font-size: 11px;
-    letter-spacing: .19em;
-    color: var(--muted);
-    margin: 0 0 20px;
-}
+.glavnyy-zagolovok { 
+    font-size: 60px; 
+    font-weight: 600; 
+    margin-bottom: 10px;
+ }
+.podzagolovok {
+     font-size: 16px; 
+     color: #99a3b1; 
+     text-transform: uppercase; /* Делает все буквы заглавными */
+    }
 
-h1 {
-    font-size: clamp(36px, 3.6vw, 68px);
-    line-height: 1.1;
-    letter-spacing: -.035em;
-    margin: 0 0 10px;
-    font-weight: 600;
-}
-
-.hero-subtitle {
-    text-transform: uppercase;
-    font-size: clamp(12px, 1.2vw, 19px);
-    color: var(--muted);
-    margin: 0;
-}
-
-.button {
-    display: inline-flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 65px;
+.knopka {
+    display: inline-block;/* Кнопка по размеру текста, а не на весь экран */
     border: 1px solid #616b78;
     background: #303a49;
     border-radius: 40px;
-    padding: 11px 32px;
-    margin-top: 53px;
+    padding: 14px 40px;
+    margin-top: 40px;
     font-size: 18px;
-    transition: background .2s;
 }
 
-.button:hover {
-    background: #414d5f;
-}
+.knopka:hover { background: #414d5f; }
 
-/* Продукция */
-.product-feature {
+.produkciya-blok {
     max-width: 1920px;
-    margin: auto;
-    min-height: 560px;
+    margin: 0 auto;
+    min-height: 680px;
     position: relative;
     border-radius: 24px;
     overflow: hidden;
-    background: var(--panel);
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    padding: 64px 6%;
+    padding: 80px 8%;
 }
 
-.feature-slot {
+.foto-fon {
+     position: absolute; 
+     inset: 0;
+      z-index: 0; /* на заднем плане */
+    }
+
+.foto-fon img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;/* Картинка заполняет блок, не искажаясь (лишнее обрезается) */
+    filter: brightness(0.6) blur(0.5px);/* Затемняем и размываем фото, чтобы текст читался */
+}
+
+.foto-fon::after {  /* Создаем дополнительный слой поверх фото */
+    content: "";
     position: absolute;
     inset: 0;
-    border-radius: 24px;
-    justify-content: flex-start;
-    padding: 6%;
-    text-align: left;
-    background: #222d3b;
+    background: linear-gradient(90deg, rgba(27,36,51,0.05), rgba(27,36,51,0.7));/* Градиент: слева прозрачно, справа темно */
 }
 
-.slot-label {
-    max-width: 40%;
-    font-size: 14px;
-    letter-spacing: .035em;
-}
-
-.product-card {
-    position: relative;
-    width: 450px;
-    max-width: 48%;
+.kartochka-tovara {
+    position: relative;/* Поднимаем над фоном */
+    z-index: 1;/* Ставим выше картинки */
+    width: 420px;
+    max-width: 45%;
     padding: 48px 40px;
-    background: #444d5b;
-    border: 1px solid #66707e;
+    text-align: center;
+    background: rgba(37, 47, 62, 0.42);
+    backdrop-filter: blur(20px);/* Размытие фона за карточкой (эффект стекла) */
+    border: 1px solid rgba(255, 255, 255, 0.14);
     border-radius: 40px;
 }
 
-.product-card .eyebrow {
-    font-size: 10px;
-    color: #c0c6cf;
+.zagolovok-kartochki {
+     font-size: 30px; 
+     font-weight: 600;
+      margin-bottom: 24px;/* отступ внизу */
+     }
+.punkt-spiska { 
+    font-size: 18px; 
+    line-height: 1.7; 
 }
 
-h2 {
-    font-weight: 500;
-    font-size: clamp(28px, 2.7vw, 48px);
-    line-height: 1.15;
-    letter-spacing: -.025em;
-    margin: 0 0 18px;
+.patenty {
+    width: calc(100% - 128px);
+    max-width: 1728px;
+    margin: 0 auto;
+    padding: 80px 0 100px;
 }
 
-.product-card h2 {
-    font-size: 30px;
-    font-weight: 600;
-}
-
-.product-card ul {
-    list-style: none;
-    padding: 0;
-    margin: 35px 0;
-    font-size: 18px;
-    line-height: 1.7;
-}
-
-.text-link {
-    display: inline-block;
-    font-size: 13px;
-    border-bottom: 1px solid #8b95a4;
-    padding-bottom: 7px;
-}
-
-/* Патенты */
-.patents {
-    padding-block: 80px 100px;
-}
-
-.section-heading {
-    margin-bottom: 52px;
-}
-
-.centered {
+.shapka-sekcii { 
     text-align: center;
+     margin-bottom: 52px; 
+    }
+.zagolovok-sekcii { 
+    font-size: 40px; 
+    font-weight: 500; 
+    margin-bottom: 12px;
+ }
+.podzagolovok-sekcii { 
+    font-size: 17px; 
+    color: #99a3b1; 
 }
 
-.section-heading p:not(.eyebrow) {
-    color: var(--muted);
-    font-size: 17px;
-    margin: 0;
-}
-
-.patent-grid {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+.setka-patentov {
+    display: grid;/*  ровных рядов */
+    grid-template-columns: repeat(4, 1fr);/* 4 колонки одинакового размера */
     gap: 40px;
 }
 
-figure {
-    margin: 0;
+.patent-mesto {
+    aspect-ratio: 3 / 4;aspect-ratio: 3 / 4; /* форма прямоугольника */
+    border-radius: 16px;
+    overflow: hidden;/* Обрезаем картинку по скругленным углам */
+    padding: 10px;
+    background: rgba(37, 47, 62, 0.42);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.14);
 }
 
-.patent-slot {
-    aspect-ratio: .76;
-    border-radius: 12px;
-    background: #343e4c;
-    padding: 25px;
-    font-size: 14px;
+.patent-mesto img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;/* Картинка вписывается целиком, не обрезается */
+    background: #f4f4f4;
+    border-radius: 10px;
 }
 
-figcaption {
+.kontakty {
+    width: calc(100% - 128px);
+    max-width: 1728px;
+    margin: 0 auto;
+    border-top: 1px solid #414b5a;
+    padding: 80px 0 100px;
+    text-align: center;
+}
+
+.steklo-blok {
     display: flex;
-    gap: 18px;
-    font-size: 12px;
-    margin-top: 18px;
-    color: #b6beca;
-}
-
-figcaption > span {
-    color: #758294;
-}
-
-/* О предприятии */
-.about {
-    display: grid;
-    grid-template-columns: 1.05fr 1fr;
-    gap: 8%;
-    padding-block: 85px;
-    border-top: 1px solid var(--line);
-}
-
-.about-slot {
-    aspect-ratio: 4/3;
+    justify-content: space-around;
+    max-width: 700px;
+    margin: 40px auto 0;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 16px;
 }
 
-.about-copy {
-    align-self: center;
-}
-
-.about-copy > p:not(.eyebrow) {
-    color: #adb6c3;
-    font-size: 17px;
-    max-width: 550px;
-}
-
-.history-mark {
+.kontakt-kol { 
     display: flex;
-    gap: 25px;
-    align-items: center;
-    margin-top: 30px;
-}
+     flex-direction: column; 
+     gap: 8px; 
+    }
 
-.history-mark strong {
-    font-size: 58px;
-    line-height: 1;
-    font-weight: 400;
-}
-
-.history-mark span {
-    color: var(--muted);
+.nadzagolovok {
     font-size: 12px;
+    text-transform: uppercase;/* Заглавные буквы */
+    letter-spacing: 0.1em;
+    color: #99a3b1;
+    margin-bottom: 8px;
 }
 
-/* Вакансии */
-.careers {
-    padding-block: 80px 100px;
-    border-top: 1px solid var(--line);
+.ssylka { 
+    font-size: 18px; 
+    font-weight: 500;
+ }
+.ssylka:hover { 
+    color: #f17882;
+ }
+.ssylka-serebro { 
+    font-size: 14px; 
+    color: #99a3b1;
+ }
+.ssylka-serebro:hover {
+     color: #f17882; 
+    }
+
+/*  ОБЩАЯ ОБЕРТКА ДЛЯ СТРАНИЦ */
+.about-wrapper {
+    width: calc(100% - 128px);
+    max-width: 1000px;
+    margin: 20px auto 80px;
+    background: #232e3d;
+    border: 1px solid #2d3a4d;
+    border-radius: 30px;
+    padding: 40px;
 }
 
-.vacancy-list {
-    border-top: 1px solid var(--line);
+.section-title {
+    font-size: 32px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #ffffff;
 }
 
-details {
-    border-bottom: 1px solid var(--line);
-    padding: 0 24px;
+.glass-box {
+    background: rgba(255, 255, 255, 0.06);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 20px;
+    padding: 30px;
+    backdrop-filter: blur(10px);
+    margin-bottom: 40px;
 }
 
-summary {
-    cursor: pointer;
-    list-style: none;
+.intro-box {
+     padding: 15px 30px;
+      margin-bottom: 30px;
+     }
+
+.center-text { 
+    text-align: center; 
+    color: #c8d1db; 
+    font-size: 15px;
+ }
+
+.row {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 40px;
+    align-items: center;
+}
+
+.col-text {
+    flex: 1;
+    font-size: 15px;
+    color: #c8d1db;
+    line-height: 1.7;
+    text-align: justify;
+}
+
+/* --- Стекло с объективами (НЕ ТРОГАЕМ) --- */
+.col-photo {
+    flex: 1;
+    position: relative;/* Точка отсчета для абсолютно позиционированных объективов */
+    min-height: 420px; 
+    margin-bottom: 0;
+    overflow: hidden; /* Обрезает объективы, если они вылезут */
+}
+
+.obj-left {
+    width: 50%;             
+    position: absolute;     
+    top: 15px;              
+    left: 2%;               
+    transform: rotate(146deg); 
+}
+
+.obj-right {
+    width: 45%;             
+    position: absolute;     
+    top: 80px;              
+    right: 9%;              
+    transform: rotate(186deg);  
+}
+
+/* --- Блок с фотографией цеха (ЦЕНТРИРУЕМ) --- */
+.people-box {
+    flex: 1.2;    
+    padding: 15px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.people-box img {
+    width: 100%;
+    border-radius: 12px;
+    display: block;
+}
+
+.red {
+     color: #e32636; 
+     font-weight: bold;
+     }
+.text-bottom { 
+    color: #c8d1db; 
+    font-size: 15px; 
+    margin-bottom: 20px; 
+    line-height: 1.7; 
+}
+
+/*  СТРАНИЦА ВАКАНСИИ  */
+.vacancy-list { 
+    display: flex;
+     flex-direction: column; 
+     gap: 15px; 
+    }
+
+.vacancy-item { /* Заголовок вакансии (виден всегда) */
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: background 0.3s;
+}
+
+.vacancy-item:hover { 
+    background: rgba(255, 255, 255, 0.07); 
+}
+
+.vacancy-title {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 20px 25px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffffff;
+    cursor: pointer;/* Курсор-рука, показывающая, что можно кликнуть */
+    list-style: none; /* Убираем стандартную стрелку браузера */
+}
+
+.vacancy-title::-webkit-details-marker {/* Убираем стрелку в браузере Chrome */
+     display: none; 
+    }
+
+.plus { 
+    font-size: 24px;
+     color: #99a3b1;
+      transition: transform 0.3s;
+     }
+details[open] .plus {
+     transform: rotate(45deg); 
+     color: #f17882; 
+    }
+
+.vacancy-content {
+    padding: 0 25px 25px 25px;
+    color: #c8d1db;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.vacancy-content p { 
+    margin-bottom: 12px; 
+}
+.vacancy-content strong { 
+    color: #e2e7ed;
+ }
+
+.vacancy-btn {
+    display: inline-block;
+    background: #1a6491; 
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    margin-top: 15px;
+    transition: background 0.2s;
+}
+
+.vacancy-btn:hover { 
+    background: #2077ab; 
+}
+
+/* СТРАНИЦА ПРОДУКЦИЯ  */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
-    padding: 26px 0;
-    font-size: 18px;
+    margin-bottom: 30px;
 }
 
-summary::-webkit-details-marker {
-    display: none;
+.product-card {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 25px;
+    transition: background 0.3s, border-color 0.3s;
 }
 
-summary span {
-    font-size: 28px;
-    color: var(--muted);
-    transition: transform .2s;
+.product-card:hover {
+    background: rgba(255, 255, 255, 0.07);
+    border-color: rgba(241, 120, 130, 0.5);
 }
 
-details[open] summary span {
-    transform: rotate(45deg);
+.product-name { 
+    font-size: 18px; 
+    font-weight: bold;
+     color: #ffffff; 
+     margin-bottom: 10px;
+     }
+.product-desc { 
+    font-size: 14px; 
+    color: #c8d1db;
+     line-height: 1.6; 
+     margin-bottom: 0; 
+    }
+
+/*  ПОДВАЛ  */
+.podval {
+    border-top: 1px solid #414b5a;
+    padding: 60px 0 0;
 }
 
-details p {
-    color: var(--muted);
-    margin: 0 0 18px;
-}
-
-details .text-link {
-    margin-bottom: 25px;
-}
-
-/* Контакты */
-.contacts {
-    border-top: 1px solid var(--line);
-    padding-block: 60px;
+.podval-obolochka {
+    width: calc(100% - 128px);
+    max-width: 1728px;
+    margin: 0 auto;
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    gap: 30px;
+    align-items: center;
+    padding-bottom: 60px;
 }
 
-.contacts p:not(.eyebrow) {
-    color: var(--muted);
+.podval-levo {
+     display: flex; 
+     flex-direction: column;
+      gap: 15px;
+     }
+.podval-logo {
+     height: 60px; 
+     width: auto; 
+    }
+.podval-tekst { 
+    color: #99a3b1; 
+    font-size: 14px; 
+}
+.podval-pravo { 
+    display: flex; 
+    flex-direction: column;
+     gap: 12px; text-align: right;
+     }
+
+.podval-ssylka { 
+    font-size: 18px; 
+    font-weight: 500; 
+    color: #e2e7ed;
+ }
+.podval-ssylka:hover { 
+    color: #f17882;
+ }
+
+.podval-niz { /* Нижняя полоса с копирайтом */
+    width: 100%;
+    padding: 24px 20px;
+    border-top: 1px solid #414b5a;
+    text-align: center;
     font-size: 13px;
-}
-
-.phone {
-    font-size: clamp(22px, 2.5vw, 42px);
-    white-space: nowrap;
-}
-
-.phone span {
-    color: var(--muted);
-    margin-left: 20px;
-}
-
-/* Подвал */
-.footer {
-    border-top: 1px solid var(--line);
-    padding-block: 28px;
-    display: flex;
-    justify-content: space-between;
-    gap: 20px;
-    color: var(--muted);
-    font-size: 12px;
-}
-
-/* Доступность */
-.skip-link {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    transform: translateY(-200%);
-    padding: 12px;
-    background: var(--bg);
-    z-index: 10;
-}
-
-.skip-link:focus {
-    transform: none;
-}
-
-@media (min-width: 1800px) {
-    .hero {
-        padding-block: 110px 75px;
-    }
-
-    .product-feature {
-        min-height: 700px;
-    }
-
-    .patent-slot {
-        padding: 40px;
-    }
-
+    color: #99a3b1;
 }
 
 @media (max-width: 1000px) {
-    .wrap {
-        width: calc(100% - 64px);
-    }
+    /* Если экран стал меньше 1000px, применяем правила ниже: */
 
-    .header {
-        gap: 24px;
+    .shapka, .pervyy-ekran, .patenty, .kontakty, .podval-obolochka, .about-wrapper {
+        width: calc(100% - 64px); 
+        /* Ширина: 100% экрана минус 64px (по 32px с каждой стороны). 
+           На компьютере было 128px (по 64px с каждой стороны), теперь отступы стали меньше, чтобы поместилось больше контента. */
     }
+    
+    .setka-patentov { gap: 20px; } 
+    /* Расстояние между карточками патентов уменьшаем с 40px до 20px, чтобы они не прилипали к краям. */
 
-    .header nav {
-        gap: 22px;
-    }
+    .kartochka-tovara { padding: 36px 32px; } 
+    /* Внутренние отступы стеклянной карточки на главной чуть уменьшаем (было 48px 40px). */
 
-    /* Адаптив для логотипа на планшетах */
-    .logo-slot img {
-        height: 40px;
-    }
+    .zagolovok-kartochki { font-size: 26px; } 
+    /* Заголовок на карточке делаем чуть меньше (было 30px), чтобы текст не вылезал. */
 
-    .hero {
-        padding-top: 70px;
-    }
+    .punkt-spiska { font-size: 16px; } 
+    /* Текст в списке тоже чуть уменьшаем (было 18px). */
 
-    .product-feature {
-        min-height: 480px;
-        padding: 40px;
-    }
+    .row { gap: 20px; } 
+    /* Расстояние между колонками на странице "О нас" уменьшаем с 40px до 20px. */
 
-    .product-card {
-        padding: 32px;
-        max-width: 52%;
-    }
+    .about-wrapper { padding: 30px; } 
+    /* Внутренние отступы большой темной плашки страниц уменьшаем с 40px до 30px. */
 
-    .product-card h2 {
-        font-size: 26px;
-    }
-
-    .product-card ul {
-        font-size: 16px;
-    }
-
-    .patent-grid {
-        gap: 20px;
-    }
-
-    .about {
-        gap: 40px;
-    }
-
-    .phone {
-        font-size: 26px;
-    }
-
+    .product-grid { grid-template-columns: repeat(2, 1fr); } 
+    /* Сетку продукции на главной перестраиваем: на компьютере было 3 колонки, на планшете делаем 2. */
 }
-
 @media (max-width: 700px) {
-    .wrap {
-        width: calc(100% - 40px);
-    }
+    /* Если экран стал меньше 700px (телефон), применяем правила ниже: */
 
-    .header {
-        padding-block: 22px;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 22px;
+    .shapka, .pervyy-ekran, .patenty, .kontakty, .podval-obolochka, .about-wrapper {
+        width: calc(100% - 40px); 
+        /* Отступы по бокам делаем еще меньше: минус 40px (по 20px с каждой стороны). Экран маленький, надо экономить место. */
     }
+    
+    .shapka { flex-direction: column; gap: 20px; padding: 20px 0; } 
+    /* ШАПКА: меняем направление с "ряд" (flex-direction: row) на "столбик" (column). 
+       Теперь логотип сверху, а меню под ним. */
 
-    .header nav {
-        width: 100%;
-        gap: 10px 22px;
-        flex-wrap: wrap;
-    }
+    .menu { flex-wrap: wrap; justify-content: center; gap: 15px; } 
+    /* МЕНЮ: разрешаем ссылкам переноситься на новую строку (flex-wrap: wrap), 
+       выравниваем их по центру и ставим отступ между ними 15px. */
 
-    nav a {
-        font-size: 12px;
-    }
+    .produkciya-blok { padding: 30px 20px; justify-content: center; } 
+    /* БЛОК ПРОДУКЦИИ: уменьшаем отступы. Карточку теперь выравниваем по центру, а не вправо. */
 
-    .hero {
-        padding-block: 55px 45px;
-    }
+    .kartochka-tovara { width: 100%; max-width: none; } 
+    /* Карточка продукции занимает 100% ширины (на весь экран телефона). */
 
-    .hero .eyebrow {
-        font-size: 9px;
-    }
+    .setka-patentov { grid-template-columns: repeat(2, 1fr); } 
+    /* ПАТЕНТЫ: оставляем 2 колонки (на телефоне 4 штуки в ряд будут слишком мелкими). */
 
-    .button {
-        margin-top: 32px;
-    }
+    .steklo-blok { flex-direction: column; gap: 30px; padding: 30px; } 
+    /* КОНТАКТЫ: блоки почты и приемной ставим друг под другом (в столбик). */
 
-    .product-feature {
-        margin-inline: 12px;
-        padding: 0;
-        display: block;
-        border-radius: 16px;
-    }
+    .about-wrapper { padding: 20px; border-radius: 20px; } 
+    /* Темная плашка страниц: делаем отступы внутри еще меньше (20px) и скругляем углы поменьше. */
 
-    .feature-slot {
-        position: relative;
-        min-height: 240px;
-        border-radius: 16px 16px 0 0;
-        padding: 25px;
-        justify-content: center;
-        text-align: center;
-    }
+    .row { flex-direction: column; gap: 20px; } 
+    /* КОЛОНКИ на странице "О нас": текст и фото встают друг под друга (в столбик). */
 
-    .slot-label {
-        max-width: 100%;
-        font-size: 12px;
-    }
+    .row:nth-of-type(2) { flex-direction: column-reverse; } 
+    /* Второй блок на странице "О нас" переворачиваем (column-reverse). 
+       Это значит: сначала текст, а картинка с цехом будет ПОД текстом. */
 
-    .product-card {
-        width: 100%;
-        max-width: none;
-        padding: 30px;
-        border-radius: 0 0 16px 16px;
-    }
+    .section-title { font-size: 26px; } 
+    /* Заголовки страниц ("О нас", "Вакансии" и т.д.) делаем меньше. */
 
-    .product-card ul {
-        margin-block: 24px;
-    }
+    .glass-box { padding: 20px; margin-bottom: 20px; } 
+    /* Стеклянные плашки: уменьшаем внутренние отступы и расстояние между ними. */
 
-    .patents {
-        padding-block: 55px;
-    }
+    .intro-box { padding: 15px; } 
+    /* Самую первую тонкую плашку с текстом делаем еще тоньше. */
 
-    .section-heading {
-        margin-bottom: 32px;
-    }
+    .people-box { flex: 1; width: 100%; padding: 10px; } 
+    /* Блок с фото людей: разрешаем ему занять всю ширину. */
 
-    .section-heading p:not(.eyebrow) {
-        font-size: 14px;
-    }
+    /* ОБЪЕКТИВЫ (на телефоне) */
+    .col-photo { min-height: 360px; width: 100%; } 
+    /* Стекло с объективами: уменьшаем высоту (на компьютере было 420px), 
+       иначе на телефоне останется много пустого места. */
 
-    .patent-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 28px 16px;
-    }
+    .obj-left { width: 55%; transform: rotate(146deg); top: 20px; left: 0%; } 
+    /* Левый объектив: делаем чуть больше по ширине (55%), ставим на 20px сверху, прижимаем к левому краю. */
 
-    .patent-slot {
-        font-size: 12px;
-        padding: 12px;
-    }
+    .obj-right { width: 50%; transform: rotate(186deg); top: 150px; right: 0%; } 
+    /* Правый объектив: опускаем ниже (top: 150px), чтобы не наезжал на первый, прижимаем к правому краю. */
 
-    figcaption {
-        font-size: 10px;
-        gap: 8px;
-    }
+    .vacancy-title { padding: 15px 20px; font-size: 15px; } 
+    /* ВАКАНСИИ: уменьшаем отступы в заголовке и размер шрифта, чтобы все влезло. */
 
-    .about {
-        grid-template-columns: 1fr;
-        padding-block: 50px;
-        gap: 32px;
-    }
+    .vacancy-content { padding: 0 20px 20px 20px; font-size: 14px; } 
+    /* Текст внутри вакансии делаем чуть меньше (14px) и уменьшаем отступы. */
 
-    .about-copy > p:not(.eyebrow) {
-        font-size: 15px;
-    }
+    .product-grid { grid-template-columns: 1fr; } 
+    /* ПРОДУКЦИЯ: сетку переделываем в 1 колонку (карточки идут друг за другом). */
 
-    .careers {
-        padding-block: 50px;
-    }
+    .podval { padding-top: 40px; } 
+    /* ПОДВАЛ: уменьшаем отступ сверху. */
 
-    details {
-        padding-inline: 4px;
-    }
+    .podval-obolochka { flex-direction: column; align-items: flex-start; gap: 30px; padding-bottom: 40px; } 
+    /* В подвале логотип и контакты ставим в столбик и прижимаем к левому краю. */
 
-    summary {
-        font-size: 15px;
-        padding-block: 22px;
-    }
-
-    .contacts {
-        align-items: flex-start;
-        flex-direction: column;
-        padding-block: 45px;
-    }
-
-    .phone {
-        font-size: 24px;
-    }
-
-    .phone span {
-        margin-left: 5px;
-    }
-
-    .footer {
-        flex-wrap: wrap;
-        font-size: 11px;
-    }
-
-    .footer span:nth-child(2) {
-        display: none;
-    }
-
+    .podval-pravo { text-align: left; } 
+    /* Текст контактов в подвале выравниваем по левому краю (чтобы было ровно). */
 }
 
-@media (prefers-reduced-motion: reduce) {
-    html {
-        scroll-behavior: auto;
-    }
 
-    * {
-        transition: none !important;
-    }
+/*Коротко, что происходит в адаптиве:
+Отступы по бокам уменьшаются (с 64px до 32px, потом до 20px).
 
-}
-@media (max-width: 768px) {
-    /* Шапка: всё по центру */
-    .header-inner {
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-    }
+Колонки (flex) превращаются в строки (column), чтобы элементы вставали друг под другом.
 
-    /* Меню: выстраиваем в колонку */
-    nav {
-        display: flex;
-        flex-direction: column; /* <-- Самое важное: вертикальный список */
-        width: 100%;
-        gap: 10px; /* Отступ между кнопками */
-    }
+Сетки (grid) уменьшают количество колонок (с 4 до 2, потом до 1).
 
-    /* Ссылки: делаем их большими кнопками */
-    nav a {
-        display: block;
-        width: 100%;            /* Растягиваем на всю ширину */
-        text-align: center;     /* Текст по центру */
-        padding: 14px 0;        /* Высота кнопки */
-        background: rgba(255, 255, 255, 0.05); /* Легкий фон */
-        border-radius: 10px;    /* Скругление */
-        border-bottom: none !important; /* Убираем старое подчеркивание */
-        font-size: 15px;
-        color: var(--text-main) !important;
-    }
+Шрифты и отступы внутри карточек становятся меньше, чтобы текст не "вылезал".
 
-    /* Эффект нажатия */
-    nav a:active {
-        background: rgba(255, 255, 255, 0.15);
-    }
-}
+Объективы переставляются так, чтобы поместиться в меньшую стеклянную плашку.*/

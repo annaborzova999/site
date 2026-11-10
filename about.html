@@ -7,42 +7,79 @@
     <title>О предприятии — Завод Юпитер</title>
 </head>
 <body id="about-page">
-   
-    
-    <header class="header wrap">
-       <a class="logo-slot" href="index.html" aria-label="Завод Юпитер — главная">
-   <img src="./img/logo.png" alt="Логотип Завод Юпитер">
-</a>
+
+    <!-- ШАПКА -->
+    <div class="shapka">
+        <a href="index.html">
+            <img src="./img/logo.png" alt="Логотип Завод Юпитер" class="logo-img">
+        </a>
+        <div class="menu">
             <a href="index.html">Главная</a>
             <a href="careers.html">Вакансии</a>
             <a href="about.html">О нас</a>
-            <a href="index.html#contacts">Контакты</a>
-            <a href="index.html#products">Продукция</a>
-       
-    </header>
+            <a href="products.html">Продукция</a>
+            <a href="index.html#kontakty">Контакты</a>
+        </div>
+    </div>
 
-    <main id="main">
-        <section class="about wrap" aria-labelledby="about-title">
-            <div class="about-slot placeholder">
-                <span>Место для фотографии завода<span>История предприятия · 4:3</span></span>
-            </div>
-            <div class="about-copy">
-                <p class="eyebrow">О предприятии</p>
-                <h2 id="about-title">Точность, проверенная временем</h2>
-                <p>История завода «Юпитер» началась в 1973 году с производства оптической техники.</p>
-                <p>Сегодня предприятие объединяет опыт специалистов и технологии производства оптики специального назначения.</p>
-                <div class="history-mark">
-                    <strong>1973</strong>
-                    <span>год основания<br>предприятия</span>
-                </div>
-            </div>
-        </section>
-    </main>
+    <!-- ОСНОВНОЙ КОНТЕНТ -->
+    <div class="about-wrapper">
+        
+        <p class="section-title">О Нас</p>
 
-    <footer class="footer wrap">
-        <span>ЗАО «Завод Юпитер»</span>
-        <span>Шаблон корпоративного сайта</span>
-        <a href="index.html">Наверх ↑</a>
-    </footer>
+        <div class="glass-box intro-box center-text"><!-- Вводный текст (класс intro-box делает плашку тоньше) -->
+            <p>Валдайский завод «Юпитер» построили в городе Валдай в <span class="red">1973</span> году для производства объективов к фотокамерам «Зенит».</p>
+        </div>
+
+        <div class="row"><!-- стекло объективов -->
+            <div class="glass-box col-photo">
+                <img src="./img/obektiv.png" alt="Объектив" class="obj-left">
+                <img src="./img/obektiv2.png" alt="Объектив" class="obj-right">
+            </div>
+            <div class="col-text">
+                <p>В начале <span class="red">1970</span>-х годов в СССР был большой дефицит, включая фотокамеры и объективы. «Зенит» считался одной из лучших камер того времени. Завод «Юпитер» строили как филиал Красногорского оптико-механического завода и поставлял ему основную часть продукции. Предприятие разместили в небольшом городке с населением около <span class="red">20</span> тысяч человек, хотя по проекту там должно было работать примерно <span class="red">8</span> тысяч сотрудников. Главным продуктом завода стал штатный объектив «Гелиос» в разных модификациях.</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-text">
+                <p>Производство было массовым: каждый месяц выпускали около <span class="red">30 000</span> объективов. Поэтому в цехах стояло много станков-автоматов, а технологии подбирались под такой масштаб. Основные процессы включали изготовление линз диаметром от <span class="red">10</span> до <span class="red">100</span> мм и нанесение просветляющих и отражающих покрытий. Механический цех делился на две разные части: в одной изготавливали алюминиевые детали заготовки, в другой их обрабатывали до готовых деталей. Затем детали отправляли на гальванику и покраску.</p>
+            </div>
+            <div class="glass-box people-box">
+                <img src="./img/people.png" alt="Цех завода">
+            </div>
+        </div>
+
+        <div class="glass-box center-text">
+            <p>Также небольшими партиями выпускали широкоугольные объективы «Мир» и «Юпитер», а «Вариозенитар» готовили к массовому производству. На заводе работала военная приемка для нужд Министерства обороны.</p>
+        </div>
+
+        <p class="section-title">В настоящее время</p>
+
+        <div class="center-text text-bottom">
+            <p>С <span class="red">2000</span> по <span class="red">2010</span> год завод выпускал монокуляры и бинокли ночного видения на электронно-оптических преобразователях нулевого поколения.</p>
+            <p>Сейчас предприятие производит оптико-механические изделия: коллиматорные прицелы, приборы ночного видения, специальные объективы, крепления для оружия и сопутствующие аксессуары.</p>
+        </div>
+
+    </div>
+
+    <!-- ПОДВАЛ -->
+    <div class="podval">
+        <div class="podval-obolochka">
+            <div class="podval-levo">
+                <img src="./img/logo.png" alt="Завод Юпитер" class="podval-logo">
+                <p class="podval-tekst">Оптика специального назначения</p>
+            </div>
+            <div class="podval-pravo">
+                <a class="podval-ssylka" href="mailto:mail@zavod-yupiter.ru">mail@zavod-yupiter.ru</a>
+                <a class="podval-ssylka" href="tel:+781666623651">8 (816) 66 2-36-51</a>
+                <a class="podval-ssylka" href="tel:+781666621391">8 (816) 66 2-13-91</a>
+            </div>
+        </div>
+        <div class="podval-niz">
+            <p>© ЗАО «Завод Юпитер»</p>
+        </div>
+    </div>
+
 </body>
 </html>

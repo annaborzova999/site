@@ -1,67 +1,133 @@
 <!DOCTYPE html>
-<html lang="ru"> <!--сайт на русском помогает для правильных шрифтов и поисковиках -->
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="./style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- адаптив говорит чтоб ширина подстроилась под устройство -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Вакансии — Завод Юпитер</title>
 </head>
 <body id="careers-page">
-   
-    
-    <header class="header wrap">
-     <a class="logo-slot" href="index.html" aria-label="Завод Юпитер — главная">
-    <img src="./img/logo.png" alt="Логотип Завод Юпитер">
-</a>
+
+    <!-- ШАПКА -->
+    <div class="shapka">
+        <a href="index.html">
+            <img src="./img/logo.png" alt="Логотип Завод Юпитер" class="logo-img">
+        </a>
+        <div class="menu">
             <a href="index.html">Главная</a>
             <a href="careers.html">Вакансии</a>
             <a href="about.html">О нас</a>
-            <a href="index.html#contacts">Контакты</a>
-            <a href="index.html#products">Продукция</a>
-       
-    </header>
+            <a href="products.html">Продукция</a>
+            <a href="index.html#kontakty">Контакты</a>
+        </div>
+    </div>
 
-    <main id="main">
-        <section class="careers wrap" aria-labelledby="careers-title">
-            <div class="section-heading">
-                <p class="eyebrow">Работа на заводе</p>
-                <h2 id="careers-title">Вакансии</h2>
-                <p>Направления из референса. Наличие вакансий уточняйте у предприятия.</p>
-            </div>
-            <div class="vacancy-list">
-                <details>
-                    <summary>Наладчик оборудования оптического производства<span aria-hidden="true">+</span></summary>
-                    <p>Здесь можно разместить обязанности, требования и условия работы.</p>
-                    <a class="text-link" href="index.html#contacts">Уточнить условия ↗</a>
-                </details>
-                <details>
-                    <summary>Инженер-конструктор<span aria-hidden="true">+</span></summary>
-                    <p>Здесь можно разместить обязанности, требования и условия работы.</p>
-                    <a class="text-link" href="index.html#contacts">Уточнить условия ↗</a>
-                </details>
-                <details>
-                    <summary>Инженер-технолог<span aria-hidden="true">+</span></summary>
-                    <p>Здесь можно разместить обязанности, требования и условия работы.</p>
-                    <a class="text-link" href="index.html#contacts">Уточнить условия ↗</a>
-                </details>
-                <details>
-                    <summary>Экономист<span aria-hidden="true">+</span></summary>
-                    <p>Здесь можно разместить обязанности, требования и условия работы.</p>
-                    <a class="text-link" href="index.html#contacts">Уточнить условия ↗</a>
-                </details>
-                <details>
-                    <summary>Оператор / наладчик станка с ЧПУ<span aria-hidden="true">+</span></summary>
-                    <p>Здесь можно разместить обязанности, требования и условия работы.</p>
-                    <a class="text-link" href="index.html#contacts">Уточнить условия ↗</a>
-                </details>
-            </div>
-        </section>
-    </main>
+    <!-- ОСНОВНОЙ КОНТЕНТ -->
+    <div class="about-wrapper">
+        
+        <p class="section-title">Вакансии</p>
+        <p class="center-text" style="margin-bottom: 30px;">Наличие вакансий уточняйте у предприятия.</p>
 
-    <footer class="footer wrap">
-        <span>ЗАО «Завод Юпитер»</span>
-        <span>Шаблон корпоративного сайта</span>
-        <a href="index.html">Наверх ↑</a>
-    </footer>
+        <div class="vacancy-list">
+            <details class="vacancy-item">
+                <summary class="vacancy-title">
+                    Наладчик оборудования оптического производства
+                    <span class="plus">+</span><!-- summary - видимая часть (заголовок) -->
+                </summary><!-- summary - видимая часть (заголовок) -->
+                <div class="vacancy-content">
+                   <!-- это тег для смыслового выделения текста -->
+                    <p><strong>Зарплата:</strong> от 50000 (60 000 руб.)</p>
+                    <p><strong>Адрес:</strong> Новгородская область, Валдайский район, г Валдай, Победы улица, дом: 107</p>
+                    <p><strong>Требования:</strong> Требования не предъявляются, Опыт: 1 лет</p>
+                    <p><strong>Обязанности:</strong> Настройка и регулировка технологического оборудования (станков, прессов). Сборка печей для выращивания кристаллов, чистка вакуумных насосов. Контроль износа деталей и их замена. Работа со станками высокой точности. Подбор инструментов и приспособлений для наладки. Изготовление пробных деталей и обучение рабочих правильным методам работы.</p>
+                    <a href="#careers-contacts" class="vacancy-btn">Связаться с нами</a>
+                </div>
+            </details>
+
+            <details class="vacancy-item">
+                <summary class="vacancy-title">
+                    Инженер-конструктор
+                    <span class="plus">+</span>
+                </summary>
+                <div class="vacancy-content">
+                    <p><strong>Зарплата:</strong> от 50000 (60 000 руб.)</p>
+                    <p><strong>Адрес:</strong> Новгородская область, Валдайский район, г Валдай, Победы улица, дом: 107</p>
+                    <p><strong>Требования:</strong> Высшее образование — бакалавриат, Опыт: 5 лет</p>
+                    <p><strong>Обязанности:</strong> Выполнение проектно-конструкторских работ. Создание эскизных и рабочих чертежей технологического оснащения. Обеспечение соответствия разрабатываемых конструкций техническим заданиям и стандартам. Соблюдение норм охраны труда и экономичности производства.</p>
+                    <a href="#careers-contacts" class="vacancy-btn">Связаться с нами</a>
+                </div>
+            </details>
+
+            <details class="vacancy-item">
+                <summary class="vacancy-title">
+                    Инженер-технолог
+                    <span class="plus">+</span>
+                </summary>
+                <div class="vacancy-content">
+                    <p><strong>Зарплата:</strong> от 50000 (60 000 руб.)</p>
+                    <p><strong>Адрес:</strong> Новгородская область, Валдайский район, г Валдай, Победы улица, дом: 107</p>
+                    <p><strong>Требования:</strong> Высшее образование — бакалавриат, Опыт: 1 лет</p>
+                    <p><strong>Обязанности:</strong> Разработка и внедрение технологических процессов и видов оборудования. Подбор средств автоматизации и оптимальных режимов производства. Обеспечение выпуска конкурентоспособной продукции. Сокращение материальных и трудовых затрат на изготовление.</p>
+                    <a href="#careers-contacts" class="vacancy-btn">Связаться с нами</a>
+                </div>
+            </details>
+
+            <details class="vacancy-item">
+                <summary class="vacancy-title">
+                    Экономист
+                    <span class="plus">+</span>
+                </summary>
+                <div class="vacancy-content">
+                    <p><strong>Зарплата:</strong> от 50000 (60 000 руб.)</p>
+                    <p><strong>Адрес:</strong> Новгородская область, Валдайский район, г Валдай, Победы улица, дом: 107</p>
+                    <p><strong>Требования:</strong> Высшее образование — бакалавриат, Опыт: 1 лет</p>
+                    <p><strong>Обязанности:</strong> Ведение оперативного учета и статистической отчетности по выпуску продукции. Составление плановых калькуляций. Анализ фактической себестоимости изделий. Прогнозирование себестоимости продукции. Расчет экономической эффективности мероприятий.</p>
+                    <a href="#careers-contacts" class="vacancy-btn">Связаться с нами</a>
+                </div>
+            </details>
+
+            <details class="vacancy-item">
+                <summary class="vacancy-title">
+                    Оператор / наладчик станка с ЧПУ
+                    <span class="plus">+</span>
+                </summary>
+                <div class="vacancy-content">
+                    <p><strong>Зарплата:</strong> от 50000 (60 000 руб.)</p>
+                    <p><strong>Адрес:</strong> Новгородская область, Валдайский район, г Валдай, Победы улица, дом: 107</p>
+                    <p><strong>Требования:</strong> Среднее профессиональное образование, Опыт: 1 лет</p>
+                    <p><strong>Обязанности:</strong> Знание устройства и принципиальных схем станков с ЧПУ. Корректировка режимов резания. Основы электротехники и механики. Установка инструмента и приспособлений. Обеспечение точности обработки деталей. Ведение процесса обработки сложных деталей по пульту управления. Обслуживание многоцелевых станков. Подналадка узлов в процессе работы.</p>
+                    <a href="#careers-contacts" class="vacancy-btn">Связаться с нами</a>
+                </div>
+            </details>
+        </div>
+
+        <!-- БЛОК С КОНТАКТАМИ ВНИЗУ -->
+        <div class="glass-box center-text" id="careers-contacts" style="margin-top: 40px; margin-bottom: 0;">
+            <p style="font-weight: bold; color: #ffffff; font-size: 18px; margin-bottom: 15px;">По всем вопросам обращайтесь:</p>
+            <p>Телефон: <a href="tel:+781666623651" class="ssylka" style="color: #f17882;">8 (816) 66 2-36-51</a></p>
+            <p>Телефон: <a href="tel:+781666621391" class="ssylka" style="color: #f17882;">8 (816) 66 2-13-91</a></p>
+            <p>Email: <a href="mailto:mail@zavod-yupiter.ru" class="ssylka" style="color: #f17882;">mail@zavod-yupiter.ru</a></p>
+        </div>
+
+    </div>
+
+    <!-- ПОДВАЛ -->
+    <div class="podval">
+        <div class="podval-obolochka">
+            <div class="podval-levo">
+                <img src="./img/logo.png" alt="Завод Юпитер" class="podval-logo">
+                <p class="podval-tekst">Оптика специального назначения</p>
+            </div>
+            <div class="podval-pravo">
+                <a class="podval-ssylka" href="mailto:mail@zavod-yupiter.ru">mail@zavod-yupiter.ru</a>
+                <a class="podval-ssylka" href="tel:+781666623651">8 (816) 66 2-36-51</a>
+                <a class="podval-ssylka" href="tel:+781666621391">8 (816) 66 2-13-91</a>
+            </div>
+        </div>
+        <div class="podval-niz">
+            <p>© ЗАО «Завод Юпитер»</p>
+        </div>
+    </div>
+
 </body>
 </html>
