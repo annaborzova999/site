@@ -51,7 +51,7 @@ summary:focus-visible {
     min-height: 116px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     gap: 40px;
 }
 
@@ -649,4 +649,35 @@ details .text-link {
         transition: none !important;
     }
 
+}/* --- АДАПТИВ ДЛЯ ТЕЛЕФОНОВ (Меню) --- */
+@media (max-width: 768px) {
+    /* Шапка становится вертикальной */
+    .header-inner {
+        flex-direction: column;
+        gap: 20px;
+        padding: 15px 0;
+    }
+
+    /* Логотип по центру или слева, как тебе удобнее */
+    .logo {
+        margin-bottom: 10px;
+    }
+
+    /* Меню: разрешаем перенос строк и центрируем */
+    nav {
+        display: flex;
+        flex-wrap: wrap;       /* Самое важное: ссылки переносятся */
+        justify-content: center; /* Центрируем кнопки */
+        gap: 15px 20px;        /* Отступы: 15px между строками, 20px между кнопками */
+        width: 100%;
+    }
+
+    /* Сами ссылки делаем чуть меньше и удобнее для пальца */
+    nav a {
+        font-size: 13px;
+        padding: 8px 12px;     /* Увеличиваем область клика */
+        border-bottom: none;   /* Убираем подчеркивание на телефоне, чтобы не мешало */
+        background: rgba(255,255,255,0.05); /* Легкий фон для кнопок */
+        border-radius: 8px;    /* Скругляем углы кнопок */
+    }
 }
