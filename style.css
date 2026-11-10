@@ -649,35 +649,38 @@ details .text-link {
         transition: none !important;
     }
 
-}/* --- АДАПТИВ ДЛЯ ТЕЛЕФОНОВ (Меню) --- */
+}
 @media (max-width: 768px) {
-    /* Шапка становится вертикальной */
+    /* Шапка: всё по центру */
     .header-inner {
         flex-direction: column;
+        align-items: center;
         gap: 20px;
-        padding: 15px 0;
     }
 
-    /* Логотип по центру или слева, как тебе удобнее */
-    .logo {
-        margin-bottom: 10px;
-    }
-
-    /* Меню: разрешаем перенос строк и центрируем */
+    /* Меню: выстраиваем в колонку */
     nav {
         display: flex;
-        flex-wrap: wrap;       /* Самое важное: ссылки переносятся */
-        justify-content: center; /* Центрируем кнопки */
-        gap: 15px 20px;        /* Отступы: 15px между строками, 20px между кнопками */
+        flex-direction: column; /* <-- Самое важное: вертикальный список */
         width: 100%;
+        gap: 10px; /* Отступ между кнопками */
     }
 
-    /* Сами ссылки делаем чуть меньше и удобнее для пальца */
+    /* Ссылки: делаем их большими кнопками */
     nav a {
-        font-size: 13px;
-        padding: 8px 12px;     /* Увеличиваем область клика */
-        border-bottom: none;   /* Убираем подчеркивание на телефоне, чтобы не мешало */
-        background: rgba(255,255,255,0.05); /* Легкий фон для кнопок */
-        border-radius: 8px;    /* Скругляем углы кнопок */
+        display: block;
+        width: 100%;            /* Растягиваем на всю ширину */
+        text-align: center;     /* Текст по центру */
+        padding: 14px 0;        /* Высота кнопки */
+        background: rgba(255, 255, 255, 0.05); /* Легкий фон */
+        border-radius: 10px;    /* Скругление */
+        border-bottom: none !important; /* Убираем старое подчеркивание */
+        font-size: 15px;
+        color: var(--text-main) !important;
+    }
+
+    /* Эффект нажатия */
+    nav a:active {
+        background: rgba(255, 255, 255, 0.15);
     }
 }
