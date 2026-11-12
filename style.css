@@ -1,4 +1,4 @@
-/* border-box: ширина блока включает в себя рамки и отступы, чтобы ничего не разъезжалось звезда у скобки говорит что ко всему относится  */
+/* ================= БАЗА ================= */
 * { 
     box-sizing: border-box; 
 }
@@ -7,54 +7,55 @@ body {
     margin: 0;
     background: #1b2433;
     color: #e2e7ed;
-    font-family: Arial, sans-serif;
-    line-height: 1.5;  /* Расстояние между строками текста */
+    
+    /* ОСНОВНОЙ ШРИФТ: Montserrat для всех текстов (параграфы, ссылки, кнопки) */
+    font-family: 'Montserrat', Arial, sans-serif;
+    line-height: 1.6;
 }
 
-p { 
-    margin: 0 0 15px 0; 
-}
-a { /* Настройки для всех ссылок */
-    color: inherit; 
-    text-decoration: none; 
-}
-img { 
-    max-width: 100%; 
-    display: block; /* картинку квадратным блоком (чтобы не было зазоров снизу) */
+/* ШРИФТ ДЛЯ ЗАГОЛОВКОВ: Prata для крупных заголовков (солидный, с засечками) */
+.glavnyy-zagolovok, 
+.podzagolovok, 
+.section-title, 
+.zagolovok-sekcii, 
+.zagolovok-kartochki, 
+.product-name, 
+.title-medium, 
+.title-small {
+    font-family: 'Prata', serif;
+    font-weight: 400; /* У Prata нет жирного начертания, он и так выглядит объемно */
+    letter-spacing: 0.03em;
 }
 
-/*  ШАПКА  */
+p { margin: 0 0 15px 0; }
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; }
+
+/* ================= ШАПКА ================= */
 .shapka {
     min-height: 116px;
-    width: calc(100% - 128px); /* ширина на весь экран но чтоб были отступы ставим фиксированное числ -128 тк браузер делит на 2 и будет с двух сторон 64 */
+    width: calc(100% - 128px);
     max-width: 1728px;
-    margin: 0 auto;  /*  сверху/снизу 0, слева/справа auto (браузер сам центрирует) */
+    margin: 0 auto;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-.logo-img { 
-    height: 50px; 
-    display: block; /* картинку квадратным блоком (чтобы не было зазоров снизу) */
-}
-.menu { /*  выставили все рядом (контейнер)  */
-    display: flex; 
-    gap: 30px; 
-}
+.logo-ssylka img { height: 50px; display: block; }
+.menu { display: flex; gap: 30px; }
 
-.menu a { /*  нашли все что лежит в этом контейнере и задали цвета  */
+.menu a {
     font-size: 14px;
-    font-weight: 600;
+    font-weight: 500;
     border-bottom: 1px solid #8b95a4;
     padding-bottom: 4px;
+    transition: color 0.3s;
 }
 
-.menu a:hover {
-     color: #f17882;
-     }
+.menu a:hover { color: #f17882; }
 
-/*  ГЛАВНАЯ СТРАНИЦА */
+/* ================= ГЛАВНАЯ СТРАНИЦА ================= */
 .pervyy-ekran {
     width: calc(100% - 128px);
     max-width: 1728px;
@@ -63,25 +64,21 @@ img {
     padding: 92px 0 64px;
 }
 
-.glavnyy-zagolovok { 
-    font-size: 60px; 
-    font-weight: 600; 
-    margin-bottom: 10px;
- }
-.podzagolovok {
-     font-size: 16px; 
-     color: #99a3b1; 
-     text-transform: uppercase; /* Делает все буквы заглавными */
-    }
+.glavnyy-zagolovok { font-size: 64px; margin-bottom: 15px; }
+.podzagolovok { font-size: 16px; color: #99a3b1; text-transform: uppercase; }
 
 .knopka {
-    display: inline-block;/* Кнопка по размеру текста, а не на весь экран */
+    display: inline-block;
     border: 1px solid #616b78;
     background: #303a49;
     border-radius: 40px;
     padding: 14px 40px;
     margin-top: 40px;
-    font-size: 18px;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background 0.3s;
 }
 
 .knopka:hover { background: #414d5f; }
@@ -99,49 +96,48 @@ img {
     padding: 80px 8%;
 }
 
-.foto-fon {
-     position: absolute; 
-     inset: 0;
-      z-index: 0; /* на заднем плане */
-    }
+.foto-fon { position: absolute; inset: 0; z-index: 0; }
 
 .foto-fon img {
     width: 100%;
     height: 100%;
-    object-fit: cover;/* Картинка заполняет блок, не искажаясь (лишнее обрезается) */
-    filter: brightness(0.6) blur(0.5px);/* Затемняем и размываем фото, чтобы текст читался */
+    object-fit: cover;
+    filter: brightness(0.6) blur(0.5px);
 }
 
-.foto-fon::after {  /* Создаем дополнительный слой поверх фото */
+.foto-fon::after {
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(90deg, rgba(27,36,51,0.05), rgba(27,36,51,0.7));/* Градиент: слева прозрачно, справа темно */
+    background: linear-gradient(90deg, rgba(27,36,51,0.05), rgba(27,36,51,0.7));
 }
 
 .kartochka-tovara {
-    position: relative;/* Поднимаем над фоном */
-    z-index: 1;/* Ставим выше картинки */
-    width: 420px;
+    position: relative;
+    z-index: 1;
+    width: 440px;
     max-width: 45%;
-    padding: 48px 40px;
-    text-align: center;
+    padding: 40px;
+    text-align: left;
     background: rgba(37, 47, 62, 0.42);
-    backdrop-filter: blur(20px);/* Размытие фона за карточкой (эффект стекла) */
+    backdrop-filter: blur(20px);
     border: 1px solid rgba(255, 255, 255, 0.14);
     border-radius: 40px;
 }
 
-.zagolovok-kartochki {
-     font-size: 30px; 
-     font-weight: 600;
-      margin-bottom: 24px;/* отступ внизу */
-     }
-.punkt-spiska { 
-    font-size: 18px; 
-    line-height: 1.7; 
-}
+.zagolovok-kartochki { font-size: 28px; margin-bottom: 25px; text-align: center; line-height: 1.3; }
 
+.lens-details { border-bottom: 1px solid rgba(255, 255, 255, 0.1); margin-bottom: 10px; }
+.lens-details summary {
+    cursor: pointer; font-size: 15px; font-weight: 500; padding: 12px 0;
+    list-style: none; display: flex; justify-content: space-between; align-items: center;
+}
+.lens-details summary::-webkit-details-marker { display: none; }
+.lens-details summary::after { content: '+'; font-size: 20px; color: #99a3b1; transition: 0.3s; }
+.lens-details[open] summary::after { content: '−'; color: #f17882; }
+.lens-details p { font-size: 13px; color: #b0bcc9; padding-bottom: 15px; margin: 0; line-height: 1.6; }
+
+/* ================= ПАТЕНТЫ ================= */
 .patenty {
     width: calc(100% - 128px);
     max-width: 1728px;
@@ -149,44 +145,69 @@ img {
     padding: 80px 0 100px;
 }
 
-.shapka-sekcii { 
-    text-align: center;
-     margin-bottom: 52px; 
-    }
-.zagolovok-sekcii { 
-    font-size: 40px; 
-    font-weight: 500; 
-    margin-bottom: 12px;
- }
-.podzagolovok-sekcii { 
-    font-size: 17px; 
-    color: #99a3b1; 
-}
+.shapka-sekcii { text-align: center; margin-bottom: 52px; }
+.zagolovok-sekcii { font-size: 38px; margin-bottom: 15px; }
+.podzagolovok-sekcii { font-size: 16px; color: #99a3b1; }
 
 .setka-patentov {
-    display: grid;/*  ровных рядов */
-    grid-template-columns: repeat(4, 1fr);/* 4 колонки одинакового размера */
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     gap: 40px;
 }
 
 .patent-mesto {
-    aspect-ratio: 3 / 4;aspect-ratio: 3 / 4; /* форма прямоугольника */
+    aspect-ratio: 3 / 4;
     border-radius: 16px;
-    overflow: hidden;/* Обрезаем картинку по скругленным углам */
+    overflow: hidden;
     padding: 10px;
     background: rgba(37, 47, 62, 0.42);
     backdrop-filter: blur(20px);
     border: 1px solid rgba(255, 255, 255, 0.14);
+    cursor: pointer;
+    transition: transform 0.2s;
 }
+
+.patent-mesto:hover { transform: scale(1.05); }
 
 .patent-mesto img {
     width: 100%;
     height: 100%;
-    object-fit: contain;/* Картинка вписывается целиком, не обрезается */
+    object-fit: contain;
     background: #f4f4f4;
     border-radius: 10px;
 }
 
+/* Окно для патента */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+    backdrop-filter: blur(5px);
+}
+
+.modal img {
+    margin: 5vh auto;
+    max-width: 90%;
+    max-height: 90vh;
+    border-radius: 8px;
+    display: block;
+}
+
+.close {
+    position: absolute;
+    top: 20px; right: 40px;
+    font-size: 40px;
+    color: #fff;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.close:hover { color: #f17882; }
+
+/* ================= КОНТАКТЫ ================= */
 .kontakty {
     width: calc(100% - 128px);
     max-width: 1728px;
@@ -208,36 +229,23 @@ img {
     border-radius: 16px;
 }
 
-.kontakt-kol { 
-    display: flex;
-     flex-direction: column; 
-     gap: 8px; 
-    }
+.kontakt-kol { display: flex; flex-direction: column; gap: 8px; }
 
 .nadzagolovok {
     font-size: 12px;
-    text-transform: uppercase;/* Заглавные буквы */
+    text-transform: uppercase;
     letter-spacing: 0.1em;
     color: #99a3b1;
     margin-bottom: 8px;
+    font-weight: 600;
 }
 
-.ssylka { 
-    font-size: 18px; 
-    font-weight: 500;
- }
-.ssylka:hover { 
-    color: #f17882;
- }
-.ssylka-serebro { 
-    font-size: 14px; 
-    color: #99a3b1;
- }
-.ssylka-serebro:hover {
-     color: #f17882; 
-    }
+.ssylka { font-size: 18px; font-weight: 500; }
+.ssylka:hover { color: #f17882; }
+.ssylka-serebro { font-size: 14px; color: #99a3b1; }
+.ssylka-serebro:hover { color: #f17882; }
 
-/*  ОБЩАЯ ОБЕРТКА ДЛЯ СТРАНИЦ */
+/* ================= ОБЩАЯ ОБЕРТКА ================= */
 .about-wrapper {
     width: calc(100% - 128px);
     max-width: 1000px;
@@ -249,10 +257,9 @@ img {
 }
 
 .section-title {
-    font-size: 32px;
-    font-weight: bold;
+    font-size: 36px;
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 35px;
     color: #ffffff;
 }
 
@@ -265,363 +272,121 @@ img {
     margin-bottom: 40px;
 }
 
-.intro-box {
-     padding: 15px 30px;
-      margin-bottom: 30px;
-     }
+.intro-box { padding: 15px 30px; margin-bottom: 30px; }
+.center-text { text-align: center; color: #c8d1db; font-size: 16px; }
 
-.center-text { 
-    text-align: center; 
-    color: #c8d1db; 
-    font-size: 15px;
- }
+.row { display: flex; gap: 40px; margin-bottom: 40px; align-items: center; }
+.col-text { flex: 1; font-size: 15px; color: #c8d1db; line-height: 1.8; text-align: justify; }
 
-.row {
-    display: flex;
-    gap: 40px;
-    margin-bottom: 40px;
-    align-items: center;
-}
+.col-photo { flex: 1; position: relative; min-height: 420px; margin-bottom: 0; overflow: hidden; }
+.obj-left { width: 50%; position: absolute; top: 15px; left: 2%; transform: rotate(146deg); }
+.obj-right { width: 45%; position: absolute; top: 80px; right: 9%; transform: rotate(186deg); }
 
-.col-text {
-    flex: 1;
-    font-size: 15px;
-    color: #c8d1db;
-    line-height: 1.7;
-    text-align: justify;
-}
+.people-box { flex: 1.2; padding: 15px; display: flex; justify-content: center; align-items: center; }
+.people-box img { width: 100%; border-radius: 12px; display: block; }
 
-/* --- Стекло с объективами (НЕ ТРОГАЕМ) --- */
-.col-photo {
-    flex: 1;
-    position: relative;/* Точка отсчета для абсолютно позиционированных объективов */
-    min-height: 420px; 
-    margin-bottom: 0;
-    overflow: hidden; /* Обрезает объективы, если они вылезут */
-}
+.red { color: #e32636; font-weight: bold; }
+.text-bottom { color: #c8d1db; font-size: 15px; margin-bottom: 20px; line-height: 1.8; }
 
-.obj-left {
-    width: 50%;             
-    position: absolute;     
-    top: 15px;              
-    left: 2%;               
-    transform: rotate(146deg); 
-}
-
-.obj-right {
-    width: 45%;             
-    position: absolute;     
-    top: 80px;              
-    right: 9%;              
-    transform: rotate(186deg);  
-}
-
-/* --- Блок с фотографией цеха (ЦЕНТРИРУЕМ) --- */
-.people-box {
-    flex: 1.2;    
-    padding: 15px; 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.people-box img {
-    width: 100%;
-    border-radius: 12px;
-    display: block;
-}
-
-.red {
-     color: #e32636; 
-     font-weight: bold;
-     }
-.text-bottom { 
-    color: #c8d1db; 
-    font-size: 15px; 
-    margin-bottom: 20px; 
-    line-height: 1.7; 
-}
-
-/*  СТРАНИЦА ВАКАНСИИ  */
-.vacancy-list { 
-    display: flex;
-     flex-direction: column; 
-     gap: 15px; 
-    }
-
-.vacancy-item { /* Заголовок вакансии (виден всегда) */
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 12px;
-    overflow: hidden;
-    transition: background 0.3s;
-}
-
-.vacancy-item:hover { 
-    background: rgba(255, 255, 255, 0.07); 
-}
+/* ================= ВАКАНСИИ ================= */
+.vacancy-list { display: flex; flex-direction: column; gap: 15px; }
+.vacancy-item { background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 12px; overflow: hidden; transition: background 0.3s; }
+.vacancy-item:hover { background: rgba(255, 255, 255, 0.07); }
 
 .vacancy-title {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 25px;
-    font-size: 16px;
-    font-weight: bold;
-    color: #ffffff;
-    cursor: pointer;/* Курсор-рука, показывающая, что можно кликнуть */
-    list-style: none; /* Убираем стандартную стрелку браузера */
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 20px 25px; font-size: 18px; font-weight: 500; color: #ffffff; cursor: pointer; list-style: none;
 }
 
-.vacancy-title::-webkit-details-marker {/* Убираем стрелку в браузере Chrome */
-     display: none; 
-    }
+.vacancy-title::-webkit-details-marker { display: none; }
+.plus { font-size: 24px; color: #99a3b1; transition: transform 0.3s; }
+details[open] .plus { transform: rotate(45deg); color: #f17882; }
 
-.plus { 
-    font-size: 24px;
-     color: #99a3b1;
-      transition: transform 0.3s;
-     }
-details[open] .plus {
-     transform: rotate(45deg); 
-     color: #f17882; 
-    }
-
-.vacancy-content {
-    padding: 0 25px 25px 25px;
-    color: #c8d1db;
-    font-size: 15px;
-    line-height: 1.6;
-}
-
-.vacancy-content p { 
-    margin-bottom: 12px; 
-}
-.vacancy-content strong { 
-    color: #e2e7ed;
- }
+.vacancy-content { padding: 0 25px 25px 25px; color: #c8d1db; font-size: 15px; line-height: 1.6; }
+.vacancy-content p { margin-bottom: 12px; }
+.vacancy-content strong { color: #e2e7ed; }
 
 .vacancy-btn {
-    display: inline-block;
-    background: #1a6491; 
-    color: #ffffff;
-    padding: 10px 20px;
-    border-radius: 6px;
-    font-size: 14px;
-    font-weight: 500;
-    margin-top: 15px;
-    transition: background 0.2s;
+    display: inline-block; background: #1a6491; color: #ffffff;
+    padding: 10px 20px; border-radius: 6px; font-size: 14px; font-weight: 500; margin-top: 15px; transition: background 0.2s;
 }
+.vacancy-btn:hover { background: #2077ab; }
 
-.vacancy-btn:hover { 
-    background: #2077ab; 
-}
+/* ================= ПРОДУКЦИЯ ================= */
+.product-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 30px; }
+.product-card { background: rgba(255, 255, 255, 0.04); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 16px; padding: 30px; transition: background 0.3s, border-color 0.3s; }
+.product-card:hover { background: rgba(255, 255, 255, 0.07); border-color: rgba(241, 120, 130, 0.5); }
+.product-name { font-size: 22px; color: #ffffff; margin-bottom: 12px; }
+.product-desc { font-size: 15px; color: #c8d1db; line-height: 1.6; margin-bottom: 0; }
 
-/* СТРАНИЦА ПРОДУКЦИЯ  */
-.product-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    margin-bottom: 30px;
-}
-
-.product-card {
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 16px;
-    padding: 25px;
-    transition: background 0.3s, border-color 0.3s;
-}
-
-.product-card:hover {
-    background: rgba(255, 255, 255, 0.07);
-    border-color: rgba(241, 120, 130, 0.5);
-}
-
-.product-name { 
-    font-size: 18px; 
-    font-weight: bold;
-     color: #ffffff; 
-     margin-bottom: 10px;
-     }
-.product-desc { 
-    font-size: 14px; 
-    color: #c8d1db;
-     line-height: 1.6; 
-     margin-bottom: 0; 
-    }
-
-/*  ПОДВАЛ  */
-.podval {
-    border-top: 1px solid #414b5a;
-    padding: 60px 0 0;
-}
-
+/* ================= ПОДВАЛ ================= */
+.podval { border-top: 1px solid #414b5a; padding: 60px 0 0; }
 .podval-obolochka {
-    width: calc(100% - 128px);
-    max-width: 1728px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-bottom: 60px;
+    width: calc(100% - 128px); max-width: 1728px; margin: 0 auto;
+    display: flex; justify-content: space-between; align-items: center; padding-bottom: 60px;
+}
+.podval-levo { display: flex; flex-direction: column; gap: 15px; }
+.podval-logo { height: 60px; width: auto; }
+.podval-tekst { color: #99a3b1; font-size: 14px; }
+.podval-pravo { display: flex; flex-direction: column; gap: 12px; text-align: right; }
+.podval-ssylka { font-size: 18px; font-weight: 500; color: #e2e7ed; }
+.podval-ssylka:hover { color: #f17882; }
+
+.podval-niz {
+    width: calc(100% - 128px); max-width: 1728px; margin: 0 auto;
+    padding: 24px 0; border-top: 1px solid #414b5a;
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 14px; color: #99a3b1;
 }
 
-.podval-levo {
-     display: flex; 
-     flex-direction: column;
-      gap: 15px;
-     }
-.podval-logo {
-     height: 60px; 
-     width: auto; 
-    }
-.podval-tekst { 
-    color: #99a3b1; 
-    font-size: 14px; 
-}
-.podval-pravo { 
-    display: flex; 
-    flex-direction: column;
-     gap: 12px; text-align: right;
-     }
+.btn-up { font-weight: 500; color: #99a3b1; transition: 0.3s; }
+.btn-up:hover { color: #f17882; }
 
-.podval-ssylka { 
-    font-size: 18px; 
-    font-weight: 500; 
-    color: #e2e7ed;
- }
-.podval-ssylka:hover { 
-    color: #f17882;
- }
-
-.podval-niz { /* Нижняя полоса с копирайтом */
-    width: 100%;
-    padding: 24px 20px;
-    border-top: 1px solid #414b5a;
-    text-align: center;
-    font-size: 13px;
-    color: #99a3b1;
-}
-
+/* ================= АДАПТИВ ================= */
 @media (max-width: 1000px) {
-    /* Если экран стал меньше 1000px, применяем правила ниже: */
-
-    .shapka, .pervyy-ekran, .patenty, .kontakty, .podval-obolochka, .about-wrapper {
-        width: calc(100% - 64px); 
-        /* Ширина: 100% экрана минус 64px (по 32px с каждой стороны). 
-           На компьютере было 128px (по 64px с каждой стороны), теперь отступы стали меньше, чтобы поместилось больше контента. */
+    .shapka, .pervyy-ekran, .patenty, .kontakty, .podval-obolochka, .about-wrapper, .podval-niz {
+        width: calc(100% - 64px);
     }
-    
-    .setka-patentov { gap: 20px; } 
-    /* Расстояние между карточками патентов уменьшаем с 40px до 20px, чтобы они не прилипали к краям. */
-
-    .kartochka-tovara { padding: 36px 32px; } 
-    /* Внутренние отступы стеклянной карточки на главной чуть уменьшаем (было 48px 40px). */
-
-    .zagolovok-kartochki { font-size: 26px; } 
-    /* Заголовок на карточке делаем чуть меньше (было 30px), чтобы текст не вылезал. */
-
-    .punkt-spiska { font-size: 16px; } 
-    /* Текст в списке тоже чуть уменьшаем (было 18px). */
-
-    .row { gap: 20px; } 
-    /* Расстояние между колонками на странице "О нас" уменьшаем с 40px до 20px. */
-
-    .about-wrapper { padding: 30px; } 
-    /* Внутренние отступы большой темной плашки страниц уменьшаем с 40px до 30px. */
-
-    .product-grid { grid-template-columns: repeat(2, 1fr); } 
-    /* Сетку продукции на главной перестраиваем: на компьютере было 3 колонки, на планшете делаем 2. */
+    .setka-patentov { gap: 20px; }
+    .kartochka-tovara { padding: 30px; max-width: 60%; }
+    .row { gap: 20px; }
+    .about-wrapper { padding: 30px; }
+    .product-grid { grid-template-columns: repeat(2, 1fr); }
 }
+
 @media (max-width: 700px) {
-    /* Если экран стал меньше 700px (телефон), применяем правила ниже: */
-
-    .shapka, .pervyy-ekran, .patenty, .kontakty, .podval-obolochka, .about-wrapper {
-        width: calc(100% - 40px); 
-        /* Отступы по бокам делаем еще меньше: минус 40px (по 20px с каждой стороны). Экран маленький, надо экономить место. */
+    .shapka, .pervyy-ekran, .patenty, .kontakty, .podval-obolochka, .about-wrapper, .podval-niz {
+        width: calc(100% - 40px);
     }
     
-    .shapka { flex-direction: column; gap: 20px; padding: 20px 0; } 
-    /* ШАПКА: меняем направление с "ряд" (flex-direction: row) на "столбик" (column). 
-       Теперь логотип сверху, а меню под ним. */
+    .shapka { flex-direction: column; gap: 20px; padding: 20px 0; }
+    .menu { flex-wrap: wrap; justify-content: center; gap: 15px; }
+    
+    .produkciya-blok { padding: 30px 20px; justify-content: center; }
+    .kartochka-tovara { width: 100%; max-width: none; }
+    .setka-patentov { grid-template-columns: repeat(2, 1fr); }
+    .steklo-blok { flex-direction: column; gap: 30px; padding: 30px; }
+    
+    .about-wrapper { padding: 20px; border-radius: 20px; }
+    .row { flex-direction: column; gap: 20px; }
+    .row:nth-of-type(2) { flex-direction: column-reverse; }
+    
+    .section-title { font-size: 28px; }
+    .glass-box { padding: 20px; margin-bottom: 20px; }
+    .intro-box { padding: 15px; }
+    
+    .people-box { flex: 1; width: 100%; padding: 10px; }
+    .col-photo { min-height: 360px; width: 100%; }
+    .obj-left { width: 55%; transform: rotate(146deg); top: 20px; left: 0%; }
+    .obj-right { width: 50%; transform: rotate(186deg); top: 150px; right: 0%; }
 
-    .menu { flex-wrap: wrap; justify-content: center; gap: 15px; } 
-    /* МЕНЮ: разрешаем ссылкам переноситься на новую строку (flex-wrap: wrap), 
-       выравниваем их по центру и ставим отступ между ними 15px. */
+    .vacancy-title { padding: 15px 20px; font-size: 16px; }
+    .vacancy-content { padding: 0 20px 20px 20px; font-size: 14px; }
 
-    .produkciya-blok { padding: 30px 20px; justify-content: center; } 
-    /* БЛОК ПРОДУКЦИИ: уменьшаем отступы. Карточку теперь выравниваем по центру, а не вправо. */
-
-    .kartochka-tovara { width: 100%; max-width: none; } 
-    /* Карточка продукции занимает 100% ширины (на весь экран телефона). */
-
-    .setka-patentov { grid-template-columns: repeat(2, 1fr); } 
-    /* ПАТЕНТЫ: оставляем 2 колонки (на телефоне 4 штуки в ряд будут слишком мелкими). */
-
-    .steklo-blok { flex-direction: column; gap: 30px; padding: 30px; } 
-    /* КОНТАКТЫ: блоки почты и приемной ставим друг под другом (в столбик). */
-
-    .about-wrapper { padding: 20px; border-radius: 20px; } 
-    /* Темная плашка страниц: делаем отступы внутри еще меньше (20px) и скругляем углы поменьше. */
-
-    .row { flex-direction: column; gap: 20px; } 
-    /* КОЛОНКИ на странице "О нас": текст и фото встают друг под друга (в столбик). */
-
-    .row:nth-of-type(2) { flex-direction: column-reverse; } 
-    /* Второй блок на странице "О нас" переворачиваем (column-reverse). 
-       Это значит: сначала текст, а картинка с цехом будет ПОД текстом. */
-
-    .section-title { font-size: 26px; } 
-    /* Заголовки страниц ("О нас", "Вакансии" и т.д.) делаем меньше. */
-
-    .glass-box { padding: 20px; margin-bottom: 20px; } 
-    /* Стеклянные плашки: уменьшаем внутренние отступы и расстояние между ними. */
-
-    .intro-box { padding: 15px; } 
-    /* Самую первую тонкую плашку с текстом делаем еще тоньше. */
-
-    .people-box { flex: 1; width: 100%; padding: 10px; } 
-    /* Блок с фото людей: разрешаем ему занять всю ширину. */
-
-    /* ОБЪЕКТИВЫ (на телефоне) */
-    .col-photo { min-height: 360px; width: 100%; } 
-    /* Стекло с объективами: уменьшаем высоту (на компьютере было 420px), 
-       иначе на телефоне останется много пустого места. */
-
-    .obj-left { width: 55%; transform: rotate(146deg); top: 20px; left: 0%; } 
-    /* Левый объектив: делаем чуть больше по ширине (55%), ставим на 20px сверху, прижимаем к левому краю. */
-
-    .obj-right { width: 50%; transform: rotate(186deg); top: 150px; right: 0%; } 
-    /* Правый объектив: опускаем ниже (top: 150px), чтобы не наезжал на первый, прижимаем к правому краю. */
-
-    .vacancy-title { padding: 15px 20px; font-size: 15px; } 
-    /* ВАКАНСИИ: уменьшаем отступы в заголовке и размер шрифта, чтобы все влезло. */
-
-    .vacancy-content { padding: 0 20px 20px 20px; font-size: 14px; } 
-    /* Текст внутри вакансии делаем чуть меньше (14px) и уменьшаем отступы. */
-
-    .product-grid { grid-template-columns: 1fr; } 
-    /* ПРОДУКЦИЯ: сетку переделываем в 1 колонку (карточки идут друг за другом). */
-
-    .podval { padding-top: 40px; } 
-    /* ПОДВАЛ: уменьшаем отступ сверху. */
-
-    .podval-obolochka { flex-direction: column; align-items: flex-start; gap: 30px; padding-bottom: 40px; } 
-    /* В подвале логотип и контакты ставим в столбик и прижимаем к левому краю. */
-
-    .podval-pravo { text-align: left; } 
-    /* Текст контактов в подвале выравниваем по левому краю (чтобы было ровно). */
+    .product-grid { grid-template-columns: 1fr; }
+    
+    .podval { padding-top: 40px; }
+    .podval-obolochka { flex-direction: column; align-items: flex-start; gap: 30px; padding-bottom: 40px; }
+    .podval-pravo { text-align: left; }
+    .podval-niz { flex-direction: column-reverse; gap: 15px; text-align: center; }
 }
-
-
-/*Коротко, что происходит в адаптиве:
-Отступы по бокам уменьшаются (с 64px до 32px, потом до 20px).
-
-Колонки (flex) превращаются в строки (column), чтобы элементы вставали друг под другом.
-
-Сетки (grid) уменьшают количество колонок (с 4 до 2, потом до 1).
-
-Шрифты и отступы внутри карточек становятся меньше, чтобы текст не "вылезал".
-
-Объективы переставляются так, чтобы поместиться в меньшую стеклянную плашку.*/

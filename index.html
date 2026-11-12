@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="./style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- адаптив  -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Завод Юпитер — оптика специального назначения</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
 </head>
-<body id="home">
+<body id="top">
 
     <!-- ШАПКА -->
     <div class="shapka">
-        
-        <a href="index.html">
-            <img src="./img/logo.png" alt="Логотип Завод Юпитер" class="logo-img">
+        <a class="logo-ssylka" href="index.html">
+            <img src="./img/logo.png" alt="Логотип Завод Юпитер">
         </a>
         <div class="menu">
             <a href="index.html">Главная</a>
@@ -33,14 +33,27 @@
     <!-- ПРОДУКЦИЯ -->
     <div class="produkciya-blok" id="produkciya">
         <div class="foto-fon">
-            <img src="./img/linzbody.webp" alt="Объектив оптики" loading="lazy"> <!-- loading="lazy" = картинка загрузится при прокрутке -->
+            <img src="./img/linzbody.webp" alt="Объектив оптики" loading="lazy">
         </div>
         <div class="kartochka-tovara">
             <p class="zagolovok-kartochki">Оптика специального назначения</p>
-            <p class="punkt-spiska">Приборы ночного видения</p>
-            <p class="punkt-spiska">Коллиматорные прицелы</p>
-            <p class="punkt-spiska">Зрительные трубки</p>
-            <p class="punkt-spiska">Аксессуары и крепления</p>
+            
+            <details class="lens-details">
+                <summary>Приборы ночного видения</summary>
+                <p>Оборудование для наблюдения в условиях низкой освещенности и полной темноты.</p>
+            </details>
+            <details class="lens-details">
+                <summary>Коллиматорные прицелы</summary>
+                <p>Оптические прицелы с прицельной маркой для быстрой и точной наводки.</p>
+            </details>
+            <details class="lens-details">
+                <summary>Зрительные трубки</summary>
+                <p>Компактные приборы для наблюдения, отличающиеся высокой светосилой.</p>
+            </details>
+            <details class="lens-details">
+                <summary>Аксессуары и крепления</summary>
+                <p>Надежные крепления и сопутствующие товары для комфортного использования оптики.</p>
+            </details>
         </div>
     </div>
 
@@ -48,13 +61,14 @@
     <div class="patenty">
         <div class="shapka-sekcii">
             <p class="zagolovok-sekcii">Патентный портфель предприятия</p>
-            <p class="podzagolovok-sekcii">Наши патенты — гарантия безупречной работы оптики</p>
+            <p class="podzagolovok-sekcii">Нажмите на патент, чтобы увеличить</p>
         </div>
         <div class="setka-patentov">
-            <div class="patent-mesto"><img src="./img/docx1.png" alt="Патент 1" loading="lazy"></div>
-            <div class="patent-mesto"><img src="./img/docx2.png" alt="Патент 2" loading="lazy"></div>
-            <div class="patent-mesto"><img src="./img/docx3.png" alt="Патент 3" loading="lazy"></div>
-            <div class="patent-mesto"><img src="./img/docx4.png" alt="Патент 4" loading="lazy"></div>
+            <!-- Добавлен onclick для открытия -->
+            <div class="patent-mesto" onclick="openImg('./img/docx1.png')"><img src="./img/docx1.png" alt="Патент 1" loading="lazy"></div>
+            <div class="patent-mesto" onclick="openImg('./img/docx2.png')"><img src="./img/docx2.png" alt="Патент 2" loading="lazy"></div>
+            <div class="patent-mesto" onclick="openImg('./img/docx3.png')"><img src="./img/docx3.png" alt="Патент 3" loading="lazy"></div>
+            <div class="patent-mesto" onclick="openImg('./img/docx4.png')"><img src="./img/docx4.png" alt="Патент 4" loading="lazy"></div>
         </div>
     </div>
 
@@ -89,8 +103,26 @@
         </div>
         <div class="podval-niz">
             <p>© ЗАО «Завод Юпитер»</p>
+            <a href="#top" class="btn-up">Наверх ↑</a>
         </div>
     </div>
+
+    <!-- ОКНО ДЛЯ ПАТЕНТА (СКРЫТО ПО УМОЛЧАНИЮ) -->
+    <div id="modal" class="modal">
+        <span class="close" onclick="closeImg()">&times;</span>
+        <img id="modal-img" src="" alt="Патент">
+    </div>
+
+    <!-- СКРИПТ ДЛЯ ОТКРЫТИЯ/ЗАКРЫТИЯ -->
+    <script>
+        function openImg(src) {
+            document.getElementById('modal-img').src = src;
+            document.getElementById('modal').style.display = 'block';
+        }
+        function closeImg() {
+            document.getElementById('modal').style.display = 'none';
+        }
+    </script>
 
 </body>
 </html>
