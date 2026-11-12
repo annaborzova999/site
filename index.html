@@ -5,7 +5,8 @@
     <link rel="stylesheet" href="./style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Завод Юпитер — оптика специального назначения</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+    <!-- Подключение шрифтов -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Prata&display=swap" rel="stylesheet">
 </head>
 <body id="top">
 
@@ -64,11 +65,11 @@
             <p class="podzagolovok-sekcii">Нажмите на патент, чтобы увеличить</p>
         </div>
         <div class="setka-patentov">
-            <!-- Добавлен onclick для открытия -->
-            <div class="patent-mesto" onclick="openImg('./img/docx1.png')"><img src="./img/docx1.png" alt="Патент 1" loading="lazy"></div>
-            <div class="patent-mesto" onclick="openImg('./img/docx2.png')"><img src="./img/docx2.png" alt="Патент 2" loading="lazy"></div>
-            <div class="patent-mesto" onclick="openImg('./img/docx3.png')"><img src="./img/docx3.png" alt="Патент 3" loading="lazy"></div>
-            <div class="patent-mesto" onclick="openImg('./img/docx4.png')"><img src="./img/docx4.png" alt="Патент 4" loading="lazy"></div>
+            <!-- onclick вызывает функцию openModal и передает ей путь к картинке -->
+            <div class="patent-mesto" onclick="openModal('./img/docx1.png')"><img src="./img/docx1.png" alt="Патент 1" loading="lazy"></div>
+            <div class="patent-mesto" onclick="openModal('./img/docx2.png')"><img src="./img/docx2.png" alt="Патент 2" loading="lazy"></div>
+            <div class="patent-mesto" onclick="openModal('./img/docx3.png')"><img src="./img/docx3.png" alt="Патент 3" loading="lazy"></div>
+            <div class="patent-mesto" onclick="openModal('./img/docx4.png')"><img src="./img/docx4.png" alt="Патент 4" loading="lazy"></div>
         </div>
     </div>
 
@@ -107,20 +108,23 @@
         </div>
     </div>
 
-    <!-- ОКНО ДЛЯ ПАТЕНТА (СКРЫТО ПО УМОЛЧАНИЮ) -->
-    <div id="modal" class="modal">
-        <span class="close" onclick="closeImg()">&times;</span>
-        <img id="modal-img" src="" alt="Патент">
+    <!-- ОКНО ДЛЯ ПАТЕНТА -->
+    <div id="patentModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 9999; text-align: center;">
+        <span onclick="closeModal()" style="position: absolute; top: 20px; right: 40px; font-size: 50px; color: white; cursor: pointer;">&times;</span>
+        <img id="modalImage" style="max-width: 90%; max-height: 90vh; margin-top: 5vh; border-radius: 10px;">
     </div>
 
-    <!-- СКРИПТ ДЛЯ ОТКРЫТИЯ/ЗАКРЫТИЯ -->
+    <!-- СКРИПТ ДЛЯ ПАТЕНТОВ (написан максимально просто) -->
     <script>
-        function openImg(src) {
-            document.getElementById('modal-img').src = src;
-            document.getElementById('modal').style.display = 'block';
+        function openModal(imageSrc) {
+            var modal = document.getElementById("patentModal");
+            var img = document.getElementById("modalImage");
+            img.src = imageSrc;
+            modal.style.display = "block";
         }
-        function closeImg() {
-            document.getElementById('modal').style.display = 'none';
+
+        function closeModal() {
+            document.getElementById("patentModal").style.display = "none";
         }
     </script>
 
