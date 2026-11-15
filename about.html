@@ -5,83 +5,133 @@
     <link rel="stylesheet" href="./style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>О предприятии — Завод Юпитер</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Prata&display=swap" rel="stylesheet">
 </head>
 <body id="top">
+    <canvas id="particleCanvas"></canvas>
+    <div class="site-wrapper">
+        <div class="shapka">
+            <a class="logo-ssylka" href="index.html"><img src="./img/logo1.png" alt="Логотип"></a>
+            <div class="menu">
+                <a href="index.html">Главная</a>
+                <a href="careers.html">Вакансии</a>
+                <a href="about.html">О нас</a>
+                <div class="dropdown">
+                    <a href="products.html" class="dropbtn">Производство ▾</a>
+                    <div class="dropdown-content">
+                        <div class="dropdown-col">
+                            <p class="drop-title">Оптические приборы</p>
+                            <a href="optics.html">Монокуляры</a>
+                            <a href="optics.html">Бинокли</a>
+                            <a href="optics.html">Зрительные трубки</a>
+                        </div>
+                        <div class="dropdown-col">
+                            <p class="drop-title">Прицелы и дальномеры</p>
+                            <a href="sights.html">Коллиматорные прицелы</a>
+                            <a href="sights.html">Лазерные дальномеры</a>
+                            <a href="sights.html">Крепления</a>
+                        </div>
+                        <div class="dropdown-col">
+                            <p class="drop-title">Ночная оптика</p>
+                            <a href="nightvision.html">Приборы ночного видения</a>
+                            <a href="nightvision.html">Тепловизоры</a>
+                        </div>
+                    </div>
+                </div>
+                <a href="index.html#kontakty">Контакты</a>
+            </div>
+        </div>
 
-    <!-- ШАПКА -->
-    <div class="shapka">
-        <a class="logo-ssylka" href="index.html">
-            <img src="./img/logo.png" alt="Логотип Завод Юпитер">
-        </a>
-        <div class="menu">
-            <a href="index.html">Главная</a>
-            <a href="careers.html">Вакансии</a>
-            <a href="about.html">О нас</a>
-            <a href="products.html">Продукция</a>
-            <a href="index.html#kontakty">Контакты</a>
+        <div class="about-wrapper">
+            <p class="section-title">О Нас</p>
+            <div class="glass-box center-text">
+                <p>Валдайский завод «Юпитер» построили в городе Валдай в <span class="red">1973</span> году для производства объективов к фотокамерам «Зенит».</p>
+            </div>
+
+            <div class="row">
+                <div class="glass-box col-photo">
+                    <img src="./img/obektiv.png" alt="Объектив" class="obj-left">
+                    <img src="./img/obektiv2.png" alt="Объектив" class="obj-right">
+                </div>
+                <div class="col-text">
+                    <p>В начале <span class="red">1970</span>-х годов в СССР был большой дефицит, включая фотокамеры и объективы. «Зенит» считался одной из лучших камер того времени. Завод «Юпитер» строили как филиал Красногорского оптико-механического завода и поставлял ему основную часть продукции. Предприятие разместили в небольшом городке с населением около <span class="red">20</span> тысяч человек, хотя по проекту там должно было работать примерно <span class="red">8</span> тысяч сотрудников.</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-text">
+                    <p>Производство было массовым: каждый месяц выпускали около <span class="red">30 000</span> объективов. Поэтому в цехах стояло много станков-автоматов, а технологии подбирались под такой масштаб. Основные процессы включали изготовление линз диаметром от <span class="red">10</span> до <span class="red">100</span> мм и нанесение просветляющих и отражающих покрытий.</p>
+                </div>
+                <div class="glass-box people-box">
+                    <img src="./img/people.png" alt="Цех завода">
+                </div>
+            </div>
+
+            <div class="glass-box center-text">
+                <p>Также небольшими партиями выпускали широкоугольные объективы «Мир» и «Юпитер», а «Вариозенитар» готовили к массовому производству. На заводе работала военная приемка для нужд Министерства обороны.</p>
+            </div>
+
+            <p class="section-title" style="margin-top: 60px;">В настоящее время</p>
+            <div class="center-text">
+                <p>С <span class="red">2000</span> по <span class="red">2010</span> год завод выпускал монокуляры и бинокли ночного видения на электронно-оптических преобразователях нулевого поколения.</p>
+                <p>Сейчас предприятие производит оптико-механические изделия: коллиматорные прицелы, приборы ночного видения, специальные объективы, крепления для оружия и сопутствующие аксессуары.</p>
+            </div>
+        </div>
+
+        <div class="podval">
+            <div class="podval-obolochka">
+                <div class="podval-levo">
+                    <img src="./img/logo1.png" alt="Завод Юпитер" class="podval-logo">
+                    <p class="podval-tekst">Оптика специального назначения</p>
+                </div>
+                <div class="podval-pravo">
+                    <a class="podval-ssylka" href="mailto:mail@zavod-yupiter.ru">mail@zavod-yupiter.ru</a>
+                    <a class="podval-ssylka" href="tel:+781666623651">8 (816) 66 2-36-51</a>
+                </div>
+            </div>
+            <div class="podval-niz">
+                <p>© ЗАО «Завод Юпитер»</p>
+                <a href="#top" class="btn-up">Наверх ↑</a>
+            </div>
         </div>
     </div>
 
-    <!-- ОСНОВНОЙ КОНТЕНТ -->
-    <div class="about-wrapper">
-
-        <p class="section-title">О Нас</p>
-
-        <div class="glass-box intro-box center-text">
-            <p>Валдайский завод «Юпитер» построили в городе Валдай в <span class="red">1973</span> году для производства объективов к фотокамерам «Зенит».</p>
-        </div>
-
-        <div class="row">
-            <div class="glass-box col-photo">
-                <img src="./img/obektiv.png" alt="Объектив" class="obj-left">
-                <img src="./img/obektiv2.png" alt="Объектив" class="obj-right">
-            </div>
-            <div class="col-text">
-                <p>В начале <span class="red">1970</span>-х годов в СССР был большой дефицит, включая фотокамеры и объективы. «Зенит» считался одной из лучших камер того времени. Завод «Юпитер» строили как филиал Красногорского оптико-механического завода и поставлял ему основную часть продукции. Предприятие разместили в небольшом городке с населением около <span class="red">20</span> тысяч человек, хотя по проекту там должно было работать примерно <span class="red">8</span> тысяч сотрудников. Главным продуктом завода стал штатный объектив «Гелиос» в разных модификациях.</p>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-text">
-                <p>Производство было массовым: каждый месяц выпускали около <span class="red">30 000</span> объективов. Поэтому в цехах стояло много станков-автоматов, а технологии подбирались под такой масштаб. Основные процессы включали изготовление линз диаметром от <span class="red">10</span> до <span class="red">100</span> мм и нанесение просветляющих и отражающих покрытий. Механический цех делился на две разные части: в одной изготавливали алюминиевые детали заготовки, в другой их обрабатывали до готовых деталей. Затем детали отправляли на гальванику и покраску.</p>
-            </div>
-            <div class="glass-box people-box">
-                <img src="./img/people.png" alt="Цех завода">
-            </div>
-        </div>
-
-        <div class="glass-box center-text">
-            <p>Также небольшими партиями выпускали широкоугольные объективы «Мир» и «Юпитер», а «Вариозенитар» готовили к массовому производству. На заводе работала военная приемка для нужд Министерства обороны.</p>
-        </div>
-
-        <p class="section-title">В настоящее время</p>
-
-        <div class="center-text text-bottom">
-            <p>С <span class="red">2000</span> по <span class="red">2010</span> год завод выпускал монокуляры и бинокли ночного видения на электронно-оптических преобразователях нулевого поколения.</p>
-            <p>Сейчас предприятие производит оптико-механические изделия: коллиматорные прицелы, приборы ночного видения, специальные объективы, крепления для оружия и сопутствующие аксессуары.</p>
-        </div>
-
-    </div>
-
-    <!-- ПОДВАЛ -->
-    <div class="podval">
-        <div class="podval-obolochka">
-            <div class="podval-levo">
-                <img src="./img/logo.png" alt="Завод Юпитер" class="podval-logo">
-                <p class="podval-tekst">Оптика специального назначения</p>
-            </div>
-            <div class="podval-pravo">
-                <a class="podval-ssylka" href="mailto:mail@zavod-yupiter.ru">mail@zavod-yupiter.ru</a>
-                <a class="podval-ssylka" href="tel:+781666623651">8 (816) 66 2-36-51</a>
-                <a class="podval-ssylka" href="tel:+781666621391">8 (816) 66 2-13-91</a>
-            </div>
-        </div>
-        <div class="podval-niz">
-            <p>© ЗАО «Завод Юпитер»</p>
-            <a href="#top" class="btn-up">Наверх ↑</a>
-        </div>
-    </div>
-
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const dropBtn = document.querySelector('.dropbtn');
+            const dropContent = document.querySelector('.dropdown-content');
+            dropBtn.addEventListener('click', function(e) {
+                if (window.innerWidth <= 1000) { e.preventDefault(); dropContent.classList.toggle('show'); }
+            });
+            window.addEventListener('click', function(e) {
+                if (!e.target.matches('.dropbtn') && !e.target.closest('.dropdown-content') && window.innerWidth <= 1000) {
+                    if (dropContent.classList.contains('show')) dropContent.classList.remove('show');
+                }
+            });
+        });
+        const canvas = document.getElementById('particleCanvas');
+        const ctx = canvas.getContext('2d');
+        let width, height;
+        let particles = [];
+        let mouse = { x: -1000, y: -1000 };
+        function resize() { width = canvas.width = window.innerWidth; height = canvas.height = window.innerHeight; }
+        window.addEventListener('resize', resize); resize();
+        window.addEventListener('mousemove', (e) => { mouse.x = e.clientX; mouse.y = e.clientY; });
+        for (let i = 0; i < 300; i++) { particles.push({ x: Math.random() * width, y: Math.random() * height, vx: (Math.random() - 0.5) * 0.8, vy: (Math.random() - 0.5) * 0.8, radius: Math.random() * 2 + 0.5 }); }
+        function animate() {
+            ctx.clearRect(0, 0, width, height);
+            particles.forEach(p => {
+                p.x += p.vx; p.y += p.vy;
+                let dx = p.x - mouse.x; let dy = p.y - mouse.y; let dist = Math.sqrt(dx * dx + dy * dy);
+                if (dist < 150) { let force = (150 - dist) / 150; let angle = Math.atan2(dy, dx); p.vx += Math.cos(angle) * force * 3; p.vy += Math.sin(angle) * force * 3; }
+                p.vx *= 0.97; p.vy *= 0.97;
+                if (Math.abs(p.vx) < 0.1 && Math.abs(p.vy) < 0.1) { p.vx += (Math.random() - 0.5) * 0.5; p.vy += (Math.random() - 0.5) * 0.5; }
+                if (p.x < -10) p.x = width + 10; if (p.x > width + 10) p.x = -10; if (p.y < -10) p.y = height + 10; if (p.y > height + 10) p.y = -10;
+                ctx.beginPath(); ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2); ctx.fillStyle = 'rgba(80, 160, 255, 0.7)'; ctx.fill();
+            });
+            requestAnimationFrame(animate);
+        }
+        animate();
+    </script>
 </body>
 </html>

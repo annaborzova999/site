@@ -5,132 +5,185 @@
     <link rel="stylesheet" href="./style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Вакансии — Завод Юпитер</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Prata&display=swap" rel="stylesheet">
+    <style>
+        /* Небольшие дополнительные стили для блока контактов */
+        .contact-card {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            align-items: center;
+            margin-top: 20px;
+        }
+        .contact-card .ssylka {
+            font-size: 20px;
+            font-weight: 600;
+        }
+        .contact-card .ssylka:hover {
+            color: #f17882;
+        }
+    </style>
 </head>
 <body id="top">
-
-    <!-- ШАПКА -->
-    <div class="shapka">
-        <a class="logo-ssylka" href="index.html">
-            <img src="./img/logo.png" alt="Логотип Завод Юпитер">
-        </a>
-        <div class="menu">
-            <a href="index.html">Главная</a>
-            <a href="careers.html">Вакансии</a>
-            <a href="about.html">О нас</a>
-            <a href="products.html">Продукция</a>
-            <a href="index.html#kontakty">Контакты</a>
-        </div>
-    </div>
-
-    <!-- ОСНОВНОЙ КОНТЕНТ -->
-    <div class="about-wrapper">
-        
-        <p class="section-title">Вакансии</p>
-        <p class="center-text" style="margin-bottom: 30px;">Наличие вакансий уточняйте у предприятия.</p>
-
-        <div class="vacancy-list">
-
-            <details class="vacancy-item">
-                <summary class="vacancy-title">
-                    Наладчик оборудования оптического производства
-                    <span class="plus">+</span>
-                </summary>
-                <div class="vacancy-content">
-                    <p><strong>Зарплата:</strong> от 50000 (60 000 руб.)</p>
-                    <p><strong>Адрес:</strong> Новгородская область, Валдайский район, г Валдай, Победы улица, дом: 107</p>
-                    <p><strong>Требования:</strong> Требования не предъявляются, Опыт: 1 лет</p>
-                    <p><strong>Обязанности:</strong> Настройка и регулировка технологического оборудования (станков, прессов). Сборка печей для выращивания кристаллов, чистка вакуумных насосов. Контроль износа деталей и их замена. Работа со станками высокой точности. Подбор инструментов и приспособлений для наладки. Изготовление пробных деталей и обучение рабочих правильным методам работы.</p>
-                    <a href="#careers-contacts" class="vacancy-btn">Связаться с нами</a>
+    <canvas id="particleCanvas"></canvas>
+    <div class="site-wrapper">
+        <div class="shapka">
+            <a class="logo-ssylka" href="index.html"><img src="./img/logo1.png" alt="Логотип"></a>
+            <div class="menu">
+                <a href="index.html">Главная</a>
+                <a href="careers.html">Вакансии</a>
+                <a href="about.html">О нас</a>
+                <div class="dropdown">
+                    <a href="products.html" class="dropbtn">Производство ▾</a>
+                    <div class="dropdown-content">
+                        <div class="dropdown-col">
+                            <p class="drop-title">Оптические приборы</p>
+                            <a href="optics.html">Монокуляры</a>
+                            <a href="optics.html">Бинокли</a>
+                            <a href="optics.html">Зрительные трубки</a>
+                        </div>
+                        <div class="dropdown-col">
+                            <p class="drop-title">Прицелы и дальномеры</p>
+                            <a href="sights.html">Коллиматорные прицелы</a>
+                            <a href="sights.html">Лазерные дальномеры</a>
+                            <a href="sights.html">Крепления</a>
+                        </div>
+                        <div class="dropdown-col">
+                            <p class="drop-title">Ночная оптика</p>
+                            <a href="nightvision.html">Приборы ночного видения</a>
+                            <a href="nightvision.html">Тепловизоры</a>
+                        </div>
+                    </div>
                 </div>
-            </details>
-
-            <details class="vacancy-item">
-                <summary class="vacancy-title">
-                    Инженер-конструктор
-                    <span class="plus">+</span>
-                </summary>
-                <div class="vacancy-content">
-                    <p><strong>Зарплата:</strong> от 50000 (60 000 руб.)</p>
-                    <p><strong>Адрес:</strong> Новгородская область, Валдайский район, г Валдай, Победы улица, дом: 107</p>
-                    <p><strong>Требования:</strong> Высшее образование — бакалавриат, Опыт: 5 лет</p>
-                    <p><strong>Обязанности:</strong> Выполнение проектно-конструкторских работ. Создание эскизных и рабочих чертежей технологического оснащения. Обеспечение соответствия разрабатываемых конструкций техническим заданиям и стандартам. Соблюдение норм охраны труда и экономичности производства.</p>
-                    <a href="#careers-contacts" class="vacancy-btn">Связаться с нами</a>
-                </div>
-            </details>
-
-            <details class="vacancy-item">
-                <summary class="vacancy-title">
-                    Инженер-технолог
-                    <span class="plus">+</span>
-                </summary>
-                <div class="vacancy-content">
-                    <p><strong>Зарплата:</strong> от 50000 (60 000 руб.)</p>
-                    <p><strong>Адрес:</strong> Новгородская область, Валдайский район, г Валдай, Победы улица, дом: 107</p>
-                    <p><strong>Требования:</strong> Высшее образование — бакалавриат, Опыт: 1 лет</p>
-                    <p><strong>Обязанности:</strong> Разработка и внедрение технологических процессов и видов оборудования. Подбор средств автоматизации и оптимальных режимов производства. Обеспечение выпуска конкурентоспособной продукции. Сокращение материальных и трудовых затрат на изготовление.</p>
-                    <a href="#careers-contacts" class="vacancy-btn">Связаться с нами</a>
-                </div>
-            </details>
-
-            <details class="vacancy-item">
-                <summary class="vacancy-title">
-                    Экономист
-                    <span class="plus">+</span>
-                </summary>
-                <div class="vacancy-content">
-                    <p><strong>Зарплата:</strong> от 50000 (60 000 руб.)</p>
-                    <p><strong>Адрес:</strong> Новгородская область, Валдайский район, г Валдай, Победы улица, дом: 107</p>
-                    <p><strong>Требования:</strong> Высшее образование — бакалавриат, Опыт: 1 лет</p>
-                    <p><strong>Обязанности:</strong> Ведение оперативного учета и статистической отчетности по выпуску продукции. Составление плановых калькуляций. Анализ фактической себестоимости изделий. Прогнозирование себестоимости продукции. Расчет экономической эффективности мероприятий.</p>
-                    <a href="#careers-contacts" class="vacancy-btn">Связаться с нами</a>
-                </div>
-            </details>
-
-            <details class="vacancy-item">
-                <summary class="vacancy-title">
-                    Оператор / наладчик станка с ЧПУ
-                    <span class="plus">+</span>
-                </summary>
-                <div class="vacancy-content">
-                    <p><strong>Зарплата:</strong> от 50000 (60 000 руб.)</p>
-                    <p><strong>Адрес:</strong> Новгородская область, Валдайский район, г Валдай, Победы улица, дом: 107</p>
-                    <p><strong>Требования:</strong> Среднее профессиональное образование, Опыт: 1 лет</p>
-                    <p><strong>Обязанности:</strong> Знание устройства и принципиальных схем станков с ЧПУ. Корректировка режимов резания. Основы электротехники и механики. Установка инструмента и приспособлений. Обеспечение точности обработки деталей. Ведение процесса обработки сложных деталей по пульту управления. Обслуживание многоцелевых станков. Подналадка узлов в процессе работы.</p>
-                    <a href="#careers-contacts" class="vacancy-btn">Связаться с нами</a>
-                </div>
-            </details>
-
-        </div>
-
-        <!-- БЛОК С КОНТАКТАМИ ВНИЗУ -->
-        <div class="glass-box center-text" id="careers-contacts" style="margin-top: 40px; margin-bottom: 0;">
-            <p style="font-weight: bold; color: #ffffff; font-size: 18px; margin-bottom: 15px;">По всем вопросам обращайтесь:</p>
-            <p>Телефон: <a href="tel:+781666623651" class="ssylka" style="color: #f17882;">8 (816) 66 2-36-51</a></p>
-            <p>Телефон: <a href="tel:+781666621391" class="ssylka" style="color: #f17882;">8 (816) 66 2-13-91</a></p>
-            <p>Email: <a href="mailto:mail@zavod-yupiter.ru" class="ssylka" style="color: #f17882;">mail@zavod-yupiter.ru</a></p>
-        </div>
-
-    </div>
-
-    <!-- ПОДВАЛ -->
-    <div class="podval">
-        <div class="podval-obolochka">
-            <div class="podval-levo">
-                <img src="./img/logo.png" alt="Завод Юпитер" class="podval-logo">
-                <p class="podval-tekst">Оптика специального назначения</p>
-            </div>
-            <div class="podval-pravo">
-                <a class="podval-ssylka" href="mailto:mail@zavod-yupiter.ru">mail@zavod-yupiter.ru</a>
-                <a class="podval-ssylka" href="tel:+781666623651">8 (816) 66 2-36-51</a>
-                <a class="podval-ssylka" href="tel:+781666621391">8 (816) 66 2-13-91</a>
+                <a href="index.html#kontakty">Контакты</a>
             </div>
         </div>
-        <div class="podval-niz">
-            <p>© ЗАО «Завод Юпитер»</p>
-            <a href="#top" class="btn-up">Наверх ↑</a>
+
+        <div class="about-wrapper">
+            <p class="section-title">Вакансии</p>
+            <p class="center-text" style="margin-bottom: 30px;">Наличие вакансий уточняйте у предприятия.</p>
+
+            <div class="vacancy-list">
+                <details class="vacancy-item">
+                    <summary class="vacancy-title">Наладчик оборудования оптического производства<span class="plus">+</span></summary>
+                    <div class="vacancy-content">
+                        <p><strong>Зарплата:</strong> от 50000 (60 000 руб.)</p>
+                        <p><strong>Адрес:</strong> Новгородская область, Валдайский район, г Валдай, Победы улица, дом: 107</p>
+                        <p><strong>Требования:</strong> Требования не предъявляются, Опыт: 1 лет</p>
+                        <p><strong>Обязанности:</strong> Настройка и регулировка технологического оборудования. Сборка печей, чистка вакуумных насосов. Контроль износа деталей и их замена.</p>
+                    </div>
+                </details>
+                <details class="vacancy-item">
+                    <summary class="vacancy-title">Инженер-конструктор<span class="plus">+</span></summary>
+                    <div class="vacancy-content">
+                        <p><strong>Зарплата:</strong> от 50000 (60 000 руб.)</p>
+                        <p><strong>Адрес:</strong> Новгородская область, Валдайский район, г Валдай, Победы улица, дом: 107</p>
+                        <p><strong>Требования:</strong> Высшее образование — бакалавриат, Опыт: 5 лет</p>
+                        <p><strong>Обязанности:</strong> Выполнение проектно-конструкторских работ. Создание эскизных и рабочих чертежей технологического оснащения.</p>
+                    </div>
+                </details>
+                <details class="vacancy-item">
+                    <summary class="vacancy-title">Инженер-технолог<span class="plus">+</span></summary>
+                    <div class="vacancy-content">
+                        <p><strong>Зарплата:</strong> от 50000 (60 000 руб.)</p>
+                        <p><strong>Адрес:</strong> Новгородская область, Валдайский район, г Валдай, Победы улица, дом: 107</p>
+                        <p><strong>Требования:</strong> Высшее образование — бакалавриат, Опыт: 1 лет</p>
+                        <p><strong>Обязанности:</strong> Разработка и внедрение технологических процессов и видов оборудования.</p>
+                    </div>
+                </details>
+                <details class="vacancy-item">
+                    <summary class="vacancy-title">Экономист<span class="plus">+</span></summary>
+                    <div class="vacancy-content">
+                        <p><strong>Зарплата:</strong> от 50000 (60 000 руб.)</p>
+                        <p><strong>Адрес:</strong> Новгородская область, Валдайский район, г Валдай, Победы улица, дом: 107</p>
+                        <p><strong>Требования:</strong> Высшее образование — бакалавриат, Опыт: 1 лет</p>
+                        <p><strong>Обязанности:</strong> Ведение оперативного учета и статистической отчетности по выпуску продукции.</p>
+                    </div>
+                </details>
+                <details class="vacancy-item">
+                    <summary class="vacancy-title">Оператор / наладчик станка с ЧПУ<span class="plus">+</span></summary>
+                    <div class="vacancy-content">
+                        <p><strong>Зарплата:</strong> от 50000 (60 000 руб.)</p>
+                        <p><strong>Адрес:</strong> Новгородская область, Валдайский район, г Валдай, Победы улица, дом: 107</p>
+                        <p><strong>Требования:</strong> Среднее профессиональное образование, Опыт: 1 лет</p>
+                        <p><strong>Обязанности:</strong> Знание устройства и принципиальных схем станков с ЧПУ. Корректировка режимов резания.</p>
+                    </div>
+                </details>
+            </div>
+
+            <!-- БЛОК: КОНТАКТЫ ДЛЯ СВЯЗИ (без стикеров) -->
+            <div class="glass-box center-text" style="margin-top: 50px; margin-bottom: 0; padding: 40px 30px;">
+                <p class="title-small" style="font-size: 26px; margin-bottom: 10px; color: #fff;">По вопросам трудоустройства</p>
+                <p style="font-size: 15px; color: #c8d1db; margin-bottom: 25px;">Позвоните нам или отправьте резюме на почту. Мы рады ответить на все вопросы!</p>
+                
+                <div class="contact-card">
+                    <a href="tel:+781666623651" class="ssylka">8 (816) 66 2-36-51</a>
+                    <a href="tel:+781666621391" class="ssylka">8 (816) 66 2-13-91</a>
+                    <a href="mailto:mail@zavod-yupiter.ru" class="ssylka">mail@zavod-yupiter.ru</a>
+                </div>
+                
+                <p style="font-size: 13px; color: #99a3b1; margin-top: 25px; margin-bottom: 0;">Новгородская область, Валдайский район, г. Валдай, ул. Победы, д. 107</p>
+            </div>
+
+        </div>
+
+        <div class="podval">
+            <div class="podval-obolochka">
+                <div class="podval-levo">
+                    <img src="./img/logo1.png" alt="Завод Юпитер" class="podval-logo">
+                    <p class="podval-tekst">Оптика специального назначения</p>
+                </div>
+                <div class="podval-pravo">
+                    <a class="podval-ssylka" href="mailto:mail@zavod-yupiter.ru">mail@zavod-yupiter.ru</a>
+                    <a class="podval-ssylka" href="tel:+781666623651">8 (816) 66 2-36-51</a>
+                </div>
+            </div>
+            <div class="podval-niz">
+                <p>© ЗАО «Завод Юпитер»</p>
+                <a href="#top" class="btn-up">Наверх ↑</a>
+            </div>
         </div>
     </div>
 
+    <script>
+        // СКРИПТ ДЛЯ МОБИЛЬНОГО МЕНЮ
+        document.addEventListener('DOMContentLoaded', function() {
+            const dropBtn = document.querySelector('.dropbtn');
+            const dropContent = document.querySelector('.dropdown-content');
+            dropBtn.addEventListener('click', function(e) {
+                if (window.innerWidth <= 1000) { e.preventDefault(); dropContent.classList.toggle('show'); }
+            });
+            window.addEventListener('click', function(e) {
+                if (!e.target.matches('.dropbtn') && !e.target.closest('.dropdown-content') && window.innerWidth <= 1000) {
+                    if (dropContent.classList.contains('show')) dropContent.classList.remove('show');
+                }
+            });
+        });
+
+        // СИНИЕ ЧАСТИЦЫ
+        const canvas = document.getElementById('particleCanvas');
+        const ctx = canvas.getContext('2d');
+        let width, height;
+        let particles = [];
+        let mouse = { x: -1000, y: -1000 };
+        function resize() { width = canvas.width = window.innerWidth; height = canvas.height = window.innerHeight; }
+        window.addEventListener('resize', resize); resize();
+        window.addEventListener('mousemove', (e) => { mouse.x = e.clientX; mouse.y = e.clientY; });
+        for (let i = 0; i < 300; i++) { particles.push({ x: Math.random() * width, y: Math.random() * height, vx: (Math.random() - 0.5) * 0.8, vy: (Math.random() - 0.5) * 0.8, radius: Math.random() * 2 + 0.5 }); }
+        function animate() {
+            ctx.clearRect(0, 0, width, height);
+            particles.forEach(p => {
+                p.x += p.vx; p.y += p.vy;
+                let dx = p.x - mouse.x; let dy = p.y - mouse.y; let dist = Math.sqrt(dx * dx + dy * dy);
+                if (dist < 150) { let force = (150 - dist) / 150; let angle = Math.atan2(dy, dx); p.vx += Math.cos(angle) * force * 3; p.vy += Math.sin(angle) * force * 3; }
+                p.vx *= 0.97; p.vy *= 0.97;
+                if (Math.abs(p.vx) < 0.1 && Math.abs(p.vy) < 0.1) { p.vx += (Math.random() - 0.5) * 0.5; p.vy += (Math.random() - 0.5) * 0.5; }
+                if (p.x < -10) p.x = width + 10; if (p.x > width + 10) p.x = -10; if (p.y < -10) p.y = height + 10; if (p.y > height + 10) p.y = -10;
+                ctx.beginPath(); ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2); ctx.fillStyle = 'rgba(80, 160, 255, 0.7)'; ctx.fill();
+            });
+            requestAnimationFrame(animate);
+        }
+        animate();
+    </script>
 </body>
 </html>

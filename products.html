@@ -4,87 +4,140 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" href="./style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Продукция — Завод Юпитер</title>
-    <!-- Подключаем новые шрифты Montserrat и Inter -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+    <title>Производство — Завод Юпитер</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Prata&display=swap" rel="stylesheet">
 </head>
 <body id="top">
+    <canvas id="particleCanvas"></canvas>
+    <div class="site-wrapper">
+        <div class="shapka">
+            <a class="logo-ssylka" href="index.html"><img src="./img/logo1.png" alt="Логотип"></a>
+            <div class="menu">
+                <a href="index.html">Главная</a>
+                <a href="careers.html">Вакансии</a>
+                <a href="about.html">О нас</a>
+                
+                <div class="dropdown">
+                    <a href="products.html" class="dropbtn">Производство ▾</a>
+                    <div class="dropdown-content">
+                        <div class="dropdown-col">
+                            <p class="drop-title">Оптические приборы</p>
+                            <a href="optics.html">Монокуляры</a>
+                            <a href="optics.html">Бинокли</a>
+                            <a href="optics.html">Зрительные трубки</a>
+                        </div>
+                        <div class="dropdown-col">
+                            <p class="drop-title">Прицелы и дальномеры</p>
+                            <a href="sights.html">Коллиматорные прицелы</a>
+                            <a href="sights.html">Лазерные дальномеры</a>
+                            <a href="sights.html">Крепления</a>
+                        </div>
+                        <div class="dropdown-col">
+                            <p class="drop-title">Ночная оптика</p>
+                            <a href="nightvision.html">Приборы ночного видения</a>
+                            <a href="nightvision.html">Тепловизоры</a>
+                        </div>
+                    </div>
+                </div>
 
-    <!-- ШАПКА -->
-    <div class="shapka">
-        <a class="logo-ssylka" href="index.html">
-            <img src="./img/logo.png" alt="Логотип Завод Юпитер">
-        </a>
-        <div class="menu">
-            <a href="index.html">Главная</a>
-            <a href="careers.html">Вакансии</a>
-            <a href="about.html">О нас</a>
-            <a href="products.html">Продукция</a>
-            <a href="index.html#kontakty">Контакты</a>
+                <a href="index.html#kontakty">Контакты</a>
+            </div>
+        </div>
+
+        <div class="about-wrapper">
+            <p class="section-title">Наше производство</p>
+            <p class="center-text" style="margin-bottom: 40px;">Нажмите на категорию, чтобы раскрыть список изделий.</p>
+
+            <div class="production-menu">
+                <details class="production-item">
+                    <summary>Оптические приборы</summary>
+                    <div class="production-content">
+                        <p>Монокуляры</p>
+                        <p>Бинокли</p>
+                        <p>Зрительные трубки</p>
+                        <a href="optics.html" class="btn-to-page">Перейти к оптическим приборам →</a>
+                    </div>
+                </details>
+
+                <details class="production-item">
+                    <summary>Прицельные комплексы</summary>
+                    <div class="production-content">
+                        <p>Коллиматорные прицелы</p>
+                        <p>Лазерные дальномеры</p>
+                        <p>Крепления и планки</p>
+                        <a href="sights.html" class="btn-to-page">Перейти к прицелам →</a>
+                    </div>
+                </details>
+
+                <details class="production-item">
+                    <summary>Специальные решения</summary>
+                    <div class="production-content">
+                        <p>Приборы ночного видения</p>
+                        <p>Тепловизоры</p>
+                        <p>Специальные объективы</p>
+                        <a href="nightvision.html" class="btn-to-page">Перейти к ночной оптике →</a>
+                    </div>
+                </details>
+            </div>
+        </div>
+
+        <div class="podval">
+            <div class="podval-obolochka">
+                <div class="podval-levo">
+                    <img src="./img/logo1.png" alt="Завод Юпитер" class="podval-logo">
+                    <p class="podval-tekst">Оптика специального назначения</p>
+                </div>
+                <div class="podval-pravo">
+                    <a class="podval-ssylka" href="mailto:mail@zavod-yupiter.ru">mail@zavod-yupiter.ru</a>
+                    <a class="podval-ssylka" href="tel:+781666623651">8 (816) 66 2-36-51</a>
+                </div>
+            </div>
+            <div class="podval-niz">
+                <p>© ЗАО «Завод Юпитер»</p>
+                <a href="#top" class="btn-up">Наверх ↑</a>
+            </div>
         </div>
     </div>
 
-    <!-- ОСНОВНОЙ КОНТЕНТ -->
-    <div class="about-wrapper">
-        
-        <p class="section-title">Наша продукция</p>
-        <p class="center-text" style="margin-bottom: 40px;">Предприятие производит широкий спектр оптико-механических изделий для различных задач.</p>
+    <script>
+        // СКРИПТ ДЛЯ МОБИЛЬНОГО МЕНЮ
+        document.addEventListener('DOMContentLoaded', function() {
+            const dropBtn = document.querySelector('.dropbtn');
+            const dropContent = document.querySelector('.dropdown-content');
+            dropBtn.addEventListener('click', function(e) {
+                if (window.innerWidth <= 1000) { e.preventDefault(); dropContent.classList.toggle('show'); }
+            });
+            window.addEventListener('click', function(e) {
+                if (!e.target.matches('.dropbtn') && !e.target.closest('.dropdown-content') && window.innerWidth <= 1000) {
+                    if (dropContent.classList.contains('show')) dropContent.classList.remove('show');
+                }
+            });
+        });
 
-        <!-- Сетка с продукцией -->
-        <div class="product-grid">
-
-            <div class="product-card">
-                <p class="product-name">Лазерные дальномеры</p>
-                <p class="product-desc">Высокоточные устройства для измерения расстояния до объектов. Подходят для работы в сложных погодных условиях.</p>
-            </div>
-
-            <div class="product-card">
-                <p class="product-name">Монокуляры</p>
-                <p class="product-desc">Компактные оптические приборы для наблюдения одним глазом. Отличаются малым весом и высокой светосилой.</p>
-            </div>
-
-            <div class="product-card">
-                <p class="product-name">Приборы ночного видения</p>
-                <p class="product-desc">Оборудование на основе электронно-оптических преобразователей для наблюдения в условиях низкой освещенности.</p>
-            </div>
-
-            <div class="product-card">
-                <p class="product-name">Тепловизоры</p>
-                <p class="product-desc">Устройства для обнаружения объектов по их тепловому излучению. Незаменимы в полной темноте и при плохой видимости.</p>
-            </div>
-
-            <div class="product-card">
-                <p class="product-name">Коллиматорные прицелы</p>
-                <p class="product-desc">Оптические прицелы с прицельной маркой, проецируемой на линзу. Обеспечивают быструю и точную наводку на цель.</p>
-            </div>
-
-            <div class="product-card">
-                <p class="product-name">Бинокли</p>
-                <p class="product-desc">Классические оптические приборы для объемного наблюдения. Высокое качество линз и надежный корпус.</p>
-            </div>
-
-        </div>
-
-    </div>
-
-    <!-- ПОДВАЛ -->
-    <div class="podval">
-        <div class="podval-obolochka">
-            <div class="podval-levo">
-                <img src="./img/logo.png" alt="Завод Юпитер" class="podval-logo">
-                <p class="podval-tekst">Оптика специального назначения</p>
-            </div>
-            <div class="podval-pravo">
-                <a class="podval-ssylka" href="mailto:mail@zavod-yupiter.ru">mail@zavod-yupiter.ru</a>
-                <a class="podval-ssylka" href="tel:+781666623651">8 (816) 66 2-36-51</a>
-                <a class="podval-ssylka" href="tel:+781666621391">8 (816) 66 2-13-91</a>
-            </div>
-        </div>
-        <div class="podval-niz">
-            <p>© ЗАО «Завод Юпитер»</p>
-            <a href="#top" class="btn-up">Наверх ↑</a>
-        </div>
-    </div>
-
+        // ЧАСТИЦЫ
+        const canvas = document.getElementById('particleCanvas');
+        const ctx = canvas.getContext('2d');
+        let width, height;
+        let particles = [];
+        let mouse = { x: -1000, y: -1000 };
+        function resize() { width = canvas.width = window.innerWidth; height = canvas.height = window.innerHeight; }
+        window.addEventListener('resize', resize); resize();
+        window.addEventListener('mousemove', (e) => { mouse.x = e.clientX; mouse.y = e.clientY; });
+        for (let i = 0; i < 300; i++) { particles.push({ x: Math.random() * width, y: Math.random() * height, vx: (Math.random() - 0.5) * 0.8, vy: (Math.random() - 0.5) * 0.8, radius: Math.random() * 2 + 0.5 }); }
+        function animate() {
+            ctx.clearRect(0, 0, width, height);
+            particles.forEach(p => {
+                p.x += p.vx; p.y += p.vy;
+                let dx = p.x - mouse.x; let dy = p.y - mouse.y; let dist = Math.sqrt(dx * dx + dy * dy);
+                if (dist < 150) { let force = (150 - dist) / 150; let angle = Math.atan2(dy, dx); p.vx += Math.cos(angle) * force * 3; p.vy += Math.sin(angle) * force * 3; }
+                p.vx *= 0.97; p.vy *= 0.97;
+                if (Math.abs(p.vx) < 0.1 && Math.abs(p.vy) < 0.1) { p.vx += (Math.random() - 0.5) * 0.5; p.vy += (Math.random() - 0.5) * 0.5; }
+                if (p.x < -10) p.x = width + 10; if (p.x > width + 10) p.x = -10; if (p.y < -10) p.y = height + 10; if (p.y > height + 10) p.y = -10;
+                ctx.beginPath(); ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2); ctx.fillStyle = 'rgba(80, 160, 255, 0.7)'; ctx.fill();
+            });
+            requestAnimationFrame(animate);
+        }
+        animate();
+    </script>
 </body>
 </html>

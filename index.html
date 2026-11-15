@@ -5,128 +5,230 @@
     <link rel="stylesheet" href="./style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Завод Юпитер — оптика специального назначения</title>
-    <!-- Подключение шрифтов -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Prata&display=swap" rel="stylesheet">
 </head>
 <body id="top">
 
-    <!-- ШАПКА -->
-    <div class="shapka">
-        <a class="logo-ssylka" href="index.html">
-            <img src="./img/logo.png" alt="Логотип Завод Юпитер">
-        </a>
-        <div class="menu">
-            <a href="index.html">Главная</a>
-            <a href="careers.html">Вакансии</a>
-            <a href="about.html">О нас</a>
-            <a href="products.html">Продукция</a>
-            <a href="index.html#kontakty">Контакты</a>
-        </div>
-    </div>
+    <canvas id="particleCanvas"></canvas>
 
-    <!-- ПЕРВЫЙ ЭКРАН -->
-    <div class="pervyy-ekran">
-        <p class="glavnyy-zagolovok">ЗАВОД ЮПИТЕР</p>
-        <p class="podzagolovok">Закрытое акционерное общество</p>
-        <a class="knopka" href="about.html">О нас</a>
-    </div>
+    <div class="site-wrapper">
+        <div class="shapka">
+            <a class="logo-ssylka" href="index.html"><img src="./img/logo1.png" alt="Логотип Завод Юпитер"></a>
+            <div class="menu">
+                <a href="index.html">Главная</a>
+                <a href="careers.html">Вакансии</a>
+                <a href="about.html">О нас</a>
+                
+                <!-- ВЫПАДАЮЩЕЕ МЕНЮ -->
+                <div class="dropdown">
+                    <a href="products.html" class="dropbtn">Производство ▾</a>
+                    <div class="dropdown-content">
+                        <div class="dropdown-col">
+                            <p class="drop-title">Оптические приборы</p>
+                            <a href="optics.html">Монокуляры</a>
+                            <a href="optics.html">Бинокли</a>
+                            <a href="optics.html">Зрительные трубки</a>
+                        </div>
+                        <div class="dropdown-col">
+                            <p class="drop-title">Прицелы и дальномеры</p>
+                            <a href="sights.html">Коллиматорные прицелы</a>
+                            <a href="sights.html">Лазерные дальномеры</a>
+                            <a href="sights.html">Крепления</a>
+                        </div>
+                        <div class="dropdown-col">
+                            <p class="drop-title">Ночная оптика</p>
+                            <a href="nightvision.html">Приборы ночного видения</a>
+                            <a href="nightvision.html">Тепловизоры</a>
+                        </div>
+                    </div>
+                </div>
 
-    <!-- ПРОДУКЦИЯ -->
-    <div class="produkciya-blok" id="produkciya">
-        <div class="foto-fon">
-            <img src="./img/linzbody.webp" alt="Объектив оптики" loading="lazy">
-        </div>
-        <div class="kartochka-tovara">
-            <p class="zagolovok-kartochki">Оптика специального назначения</p>
-            
-            <details class="lens-details">
-                <summary>Приборы ночного видения</summary>
-                <p>Оборудование для наблюдения в условиях низкой освещенности и полной темноты.</p>
-            </details>
-            <details class="lens-details">
-                <summary>Коллиматорные прицелы</summary>
-                <p>Оптические прицелы с прицельной маркой для быстрой и точной наводки.</p>
-            </details>
-            <details class="lens-details">
-                <summary>Зрительные трубки</summary>
-                <p>Компактные приборы для наблюдения, отличающиеся высокой светосилой.</p>
-            </details>
-            <details class="lens-details">
-                <summary>Аксессуары и крепления</summary>
-                <p>Надежные крепления и сопутствующие товары для комфортного использования оптики.</p>
-            </details>
-        </div>
-    </div>
-
-    <!-- ПАТЕНТЫ -->
-    <div class="patenty">
-        <div class="shapka-sekcii">
-            <p class="zagolovok-sekcii">Патентный портфель предприятия</p>
-            <p class="podzagolovok-sekcii">Нажмите на патент, чтобы увеличить</p>
-        </div>
-        <div class="setka-patentov">
-            <!-- onclick вызывает функцию openModal и передает ей путь к картинке -->
-            <div class="patent-mesto" onclick="openModal('./img/docx1.png')"><img src="./img/docx1.png" alt="Патент 1" loading="lazy"></div>
-            <div class="patent-mesto" onclick="openModal('./img/docx2.png')"><img src="./img/docx2.png" alt="Патент 2" loading="lazy"></div>
-            <div class="patent-mesto" onclick="openModal('./img/docx3.png')"><img src="./img/docx3.png" alt="Патент 3" loading="lazy"></div>
-            <div class="patent-mesto" onclick="openModal('./img/docx4.png')"><img src="./img/docx4.png" alt="Патент 4" loading="lazy"></div>
-        </div>
-    </div>
-
-    <!-- КОНТАКТЫ -->
-    <div class="kontakty" id="kontakty">
-        <p class="zagolovok-sekcii">Контакты</p>
-        <div class="steklo-blok">
-            <div class="kontakt-kol">
-                <p class="nadzagolovok">Электронная почта</p>
-                <a class="ssylka" href="mailto:mail@zavod-yupiter.ru">mail@zavod-yupiter.ru</a>
-            </div>
-            <div class="kontakt-kol">
-                <p class="nadzagolovok">Приемная</p>
-                <a class="ssylka" href="tel:+781666623651">8 (816) 66 2-36-51</a>
-                <a class="ssylka-serebro" href="mailto:secretary@zavod-yupiter.ru">secretary@zavod-yupiter.ru</a>
+                <a href="index.html#kontakty">Контакты</a>
             </div>
         </div>
-    </div>
 
-    <!-- ПОДВАЛ -->
-    <div class="podval">
-        <div class="podval-obolochka">
-            <div class="podval-levo">
-                <img src="./img/logo.png" alt="Завод Юпитер" class="podval-logo">
-                <p class="podval-tekst">Оптика специального назначения</p>
+        <div class="pervyy-ekran">
+            <p class="glavnyy-zagolovok">ЗАВОД ЮПИТЕР</p>
+            <p class="podzagolovok">Закрытое акционерное общество</p>
+            <a class="knopka" href="about.html">О нас</a>
+        </div>
+
+        <div class="top-scroll-block">
+            <div class="scroll-item">
+                <p class="scroll-title">Более 50 лет опыта</p>
+                <p class="scroll-text">История завода начинается с 1973 года.</p>
             </div>
-            <div class="podval-pravo">
-                <a class="podval-ssylka" href="mailto:mail@zavod-yupiter.ru">mail@zavod-yupiter.ru</a>
-                <a class="podval-ssylka" href="tel:+781666623651">8 (816) 66 2-36-51</a>
-                <a class="podval-ssylka" href="tel:+781666621391">8 (816) 66 2-13-91</a>
+            <div class="scroll-item">
+                <p class="scroll-title">Военная приемка</p>
+                <p class="scroll-text">Высокие стандарты качества и надежности.</p>
+            </div>
+            <div class="scroll-item">
+                <p class="scroll-title">Широкий ассортимент</p>
+                <p class="scroll-text">От прицелов до сложных оптических систем.</p>
             </div>
         </div>
-        <div class="podval-niz">
-            <p>© ЗАО «Завод Юпитер»</p>
-            <a href="#top" class="btn-up">Наверх ↑</a>
+
+        <div class="slider-block" id="produkciya">
+            <div class="slide active">
+                <div class="foto-fon"><img src="./img/foto.jpeg" alt="Завод"></div>
+                <div class="steklo-kartochka">
+                    <p class="zagolovok-kartochki">Наше<br>производство</p>
+                    <p style="margin-top: 20px; font-size: 16px; line-height: 1.6; color: #c8d1db; text-align: center;">Современные технологии и опытные специалисты. Мы создаем оптику, которой доверяют.</p>
+                </div>
+            </div>
+
+            <div class="slide">
+                <div class="foto-fon"><img src="./img/foto2.png" alt="Объектив"></div>
+                <div class="steklo-kartochka">
+                    <p class="zagolovok-kartochki">Оптика<br>специального<br>назначения</p>
+                    <details class="lens-details">
+                        <summary>Приборы ночного видения</summary>
+                        <p>Оборудование для наблюдения в условиях низкой освещенности и полной темноты.</p>
+                    </details>
+                    <details class="lens-details">
+                        <summary>Коллиматорные прицелы</summary>
+                        <p>Оптические прицелы с прицельной маркой, обеспечивающие быструю и точную наводку.</p>
+                    </details>
+                    <details class="lens-details">
+                        <summary>Зрительные трубки</summary>
+                        <p>Компактные приборы для наблюдения, отличающиеся высокой светосилой.</p>
+                    </details>
+                    <details class="lens-details">
+                        <summary>Аксессуары и крепления</summary>
+                        <p>Надежные крепления и сопутствующие товары для комфортного использования оптики.</p>
+                    </details>
+                </div>
+            </div>
+
+            <button class="arrow prev" onclick="prevSlide()">&#10094;</button>
+            <button class="arrow next" onclick="nextSlide()">&#10095;</button>
+
+            <div class="dots">
+                <span class="dot active" onclick="goToSlide(0)"></span>
+                <span class="dot" onclick="goToSlide(1)"></span>
+            </div>
+        </div>
+
+        <div class="patenty">
+            <div class="shapka-sekcii">
+                <p class="zagolovok-sekcii">Патентный портфель предприятия</p>
+                <p class="podzagolovok-sekcii">Нажмите на патент, чтобы увеличить</p>
+            </div>
+            <div class="setka-patentov">
+                <div class="patent-mesto" onclick="openModal('./img/pantent.jpg')"><img src="./img/pantent.jpg" alt="Патент 1" loading="lazy"></div>
+                <div class="patent-mesto" onclick="openModal('./img/pantent1.jpg')"><img src="./img/pantent1.jpg" alt="Патент 2" loading="lazy"></div>
+                <div class="patent-mesto" onclick="openModal('./img/pantent2.jpg')"><img src="./img/pantent2.jpg" alt="Патент 3" loading="lazy"></div>
+                <div class="patent-mesto" onclick="openModal('./img/pantent3.jpg')"><img src="./img/pantent3.jpg" alt="Патент 4" loading="lazy"></div>
+            </div>
+        </div>
+
+        <div class="kontakty" id="kontakty">
+            <p class="zagolovok-sekcii">Контакты</p>
+            <div class="steklo-blok">
+                <div class="kontakt-kol">
+                    <p class="nadzagolovok">Электронная почта</p>
+                    <a class="ssylka" href="mailto:mail@zavod-yupiter.ru">mail@zavod-yupiter.ru</a>
+                </div>
+                <div class="kontakt-kol">
+                    <p class="nadzagolovok">Приемная</p>
+                    <a class="ssylka" href="tel:+781666623651">8 (816) 66 2-36-51</a>
+                    <a class="ssylka-serebro" href="mailto:secretary@zavod-yupiter.ru">secretary@zavod-yupiter.ru</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="podval">
+            <div class="podval-obolochka">
+                <div class="podval-levo">
+                    <img src="./img/logo1.png" alt="Завод Юпитер" class="podval-logo">
+                    <p class="podval-tekst">Оптика специального назначения</p>
+                </div>
+                <div class="podval-pravo">
+                    <a class="podval-ssylka" href="mailto:mail@zavod-yupiter.ru">mail@zavod-yupiter.ru</a>
+                    <a class="podval-ssylka" href="tel:+781666623651">8 (816) 66 2-36-51</a>
+                    <a class="podval-ssylka" href="tel:+781666621391">8 (816) 66 2-13-91</a>
+                </div>
+            </div>
+            <div class="podval-niz">
+                <p>© ЗАО «Завод Юпитер»</p>
+                <a href="#top" class="btn-up">Наверх ↑</a>
+            </div>
         </div>
     </div>
 
-    <!-- ОКНО ДЛЯ ПАТЕНТА -->
-    <div id="patentModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 9999; text-align: center;">
-        <span onclick="closeModal()" style="position: absolute; top: 20px; right: 40px; font-size: 50px; color: white; cursor: pointer;">&times;</span>
-        <img id="modalImage" style="max-width: 90%; max-height: 90vh; margin-top: 5vh; border-radius: 10px;">
+    <div id="patentModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img id="modalImage" src="" alt="Патент">
     </div>
 
-    <!-- СКРИПТ ДЛЯ ПАТЕНТОВ (написан максимально просто) -->
     <script>
-        function openModal(imageSrc) {
-            var modal = document.getElementById("patentModal");
-            var img = document.getElementById("modalImage");
-            img.src = imageSrc;
-            modal.style.display = "block";
-        }
+        // СКРИПТ ДЛЯ МОБИЛЬНОГО МЕНЮ
+        document.addEventListener('DOMContentLoaded', function() {
+            const dropBtn = document.querySelector('.dropbtn');
+            const dropContent = document.querySelector('.dropdown-content');
+            dropBtn.addEventListener('click', function(e) {
+                if (window.innerWidth <= 1000) {
+                    e.preventDefault(); 
+                    dropContent.classList.toggle('show');
+                }
+            });
+            window.addEventListener('click', function(e) {
+                if (!e.target.matches('.dropbtn') && !e.target.closest('.dropdown-content') && window.innerWidth <= 1000) {
+                    if (dropContent.classList.contains('show')) dropContent.classList.remove('show');
+                }
+            });
+        });
 
+        // ПАТЕНТЫ И СЛАЙДЕР
+        function openModal(src) {
+            document.getElementById("modalImage").src = src;
+            document.getElementById("patentModal").style.display = "block";
+        }
         function closeModal() {
             document.getElementById("patentModal").style.display = "none";
         }
-    </script>
 
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const dots = document.querySelectorAll('.dot');
+
+        function showSlide(index) {
+            if (index >= slides.length) currentSlide = 0;
+            else if (index < 0) currentSlide = slides.length - 1;
+            else currentSlide = index;
+            slides.forEach(s => s.classList.remove('active'));
+            dots.forEach(d => d.classList.remove('active'));
+            slides[currentSlide].classList.add('active');
+            dots[currentSlide].classList.add('active');
+        }
+        function nextSlide() { showSlide(currentSlide + 1); }
+        function prevSlide() { showSlide(currentSlide - 1); }
+        function goToSlide(index) { showSlide(index); }
+
+        // СИНИЕ ЧАСТИЦЫ
+        const canvas = document.getElementById('particleCanvas');
+        const ctx = canvas.getContext('2d');
+        let width, height;
+        let particles = [];
+        let mouse = { x: -1000, y: -1000 };
+        function resize() { width = canvas.width = window.innerWidth; height = canvas.height = window.innerHeight; }
+        window.addEventListener('resize', resize); resize();
+        window.addEventListener('mousemove', (e) => { mouse.x = e.clientX; mouse.y = e.clientY; });
+        for (let i = 0; i < 300; i++) { particles.push({ x: Math.random() * width, y: Math.random() * height, vx: (Math.random() - 0.5) * 0.8, vy: (Math.random() - 0.5) * 0.8, radius: Math.random() * 2 + 0.5 }); }
+        function animate() {
+            ctx.clearRect(0, 0, width, height);
+            particles.forEach(p => {
+                p.x += p.vx; p.y += p.vy;
+                let dx = p.x - mouse.x; let dy = p.y - mouse.y; let dist = Math.sqrt(dx * dx + dy * dy);
+                if (dist < 150) { let force = (150 - dist) / 150; let angle = Math.atan2(dy, dx); p.vx += Math.cos(angle) * force * 3; p.vy += Math.sin(angle) * force * 3; }
+                p.vx *= 0.97; p.vy *= 0.97;
+                if (Math.abs(p.vx) < 0.1 && Math.abs(p.vy) < 0.1) { p.vx += (Math.random() - 0.5) * 0.5; p.vy += (Math.random() - 0.5) * 0.5; }
+                if (p.x < -10) p.x = width + 10; if (p.x > width + 10) p.x = -10; if (p.y < -10) p.y = height + 10; if (p.y > height + 10) p.y = -10;
+                ctx.beginPath(); ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2); ctx.fillStyle = 'rgba(80, 160, 255, 0.7)'; ctx.fill();
+            });
+            requestAnimationFrame(animate);
+        }
+        animate();
+    </script>
 </body>
 </html>
