@@ -7,17 +7,10 @@
     <title>Прицелы и дальномеры — Завод Юпитер</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Prata&display=swap" rel="stylesheet">
     <style>
-        .col-photo { display: flex; align-items: center; justify-content: center; width: 100%; }
-        .product-img {
-            width: 100%; height: 350px; object-fit: cover; border-radius: 12px;
-            display: block; margin: 0 auto; 
-            filter: brightness(0.85); /* ЛЕГКОЕ ЗАТЕМНЕНИЕ */
-        }
-        .img-distance {
-            width: 95% !important; height: auto !important; max-height: 340px;           
-            object-fit: contain !important; padding: 5px; margin: 0 auto; 
-        }
-        .img-dark { filter: brightness(0.6); } /* Сильное затемнение (крепление) */
+        .col-photo { display: flex; align-items: center; justify-content: center; width: 100%; overflow: hidden; border-radius: 12px; }
+        .product-img { width: 100%; height: 350px; object-fit: cover; border-radius: 12px; display: block; margin: 0 auto; filter: brightness(0.85); }
+        .img-distance { width: 95% !important; height: auto !important; max-height: 340px; object-fit: contain !important; padding: 5px; margin: 0 auto; }
+        .img-dark { filter: brightness(0.6); }
         .img-lower { margin-top: 80px; }
     </style>
 </head>
@@ -31,7 +24,7 @@
                 <a href="careers.html">Вакансии</a>
                 <a href="about.html">О нас</a>
                 <div class="dropdown">
-                    <a href="products.html" class="dropbtn">Производство ▾</a>
+                    <a href="products.html" class="dropbtn">Производство</a>
                     <div class="dropdown-content">
                         <div class="dropdown-col">
                             <p class="drop-title">Оптические приборы</p>
@@ -101,9 +94,16 @@
                     <img src="./img/logo1.png" alt="Завод Юпитер" class="podval-logo">
                     <p class="podval-tekst">Оптика специального назначения</p>
                 </div>
+                <div class="podval-menu">
+                    <a href="index.html">Главная</a>
+                    <a href="products.html">Производство</a>
+                    <a href="careers.html">Вакансии</a>
+                    <a href="about.html">О нас</a>
+                </div>
                 <div class="podval-pravo">
                     <a class="podval-ssylka" href="mailto:mail@zavod-yupiter.ru">mail@zavod-yupiter.ru</a>
                     <a class="podval-ssylka" href="tel:+781666623651">8 (816) 66 2-36-51</a>
+                    <a class="podval-ssylka" href="tel:+781666621391">8 (816) 66 2-13-91</a>
                 </div>
             </div>
             <div class="podval-niz">
@@ -126,6 +126,7 @@
                 }
             });
         });
+
         const canvas = document.getElementById('particleCanvas');
         const ctx = canvas.getContext('2d');
         let width, height, particles = [], mouse = { x: -1000, y: -1000 };

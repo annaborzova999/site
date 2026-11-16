@@ -7,21 +7,9 @@
     <title>Вакансии — Завод Юпитер</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&family=Prata&display=swap" rel="stylesheet">
     <style>
-        /* Небольшие дополнительные стили для блока контактов */
-        .contact-card {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-            align-items: center;
-            margin-top: 20px;
-        }
-        .contact-card .ssylka {
-            font-size: 20px;
-            font-weight: 600;
-        }
-        .contact-card .ssylka:hover {
-            color: #f17882;
-        }
+        .contact-card { display: flex; flex-direction: column; gap: 15px; align-items: center; margin-top: 20px; }
+        .contact-card .ssylka { font-size: 20px; font-weight: 600; }
+        .contact-card .ssylka:hover { color: #f17882; }
     </style>
 </head>
 <body id="top">
@@ -34,7 +22,7 @@
                 <a href="careers.html">Вакансии</a>
                 <a href="about.html">О нас</a>
                 <div class="dropdown">
-                    <a href="products.html" class="dropbtn">Производство ▾</a>
+                    <a href="products.html" class="dropbtn">Производство</a>
                     <div class="dropdown-content">
                         <div class="dropdown-col">
                             <p class="drop-title">Оптические приборы</p>
@@ -111,7 +99,6 @@
                 </details>
             </div>
 
-            <!-- БЛОК: КОНТАКТЫ ДЛЯ СВЯЗИ (без стикеров) -->
             <div class="glass-box center-text" style="margin-top: 50px; margin-bottom: 0; padding: 40px 30px;">
                 <p class="title-small" style="font-size: 26px; margin-bottom: 10px; color: #fff;">По вопросам трудоустройства</p>
                 <p style="font-size: 15px; color: #c8d1db; margin-bottom: 25px;">Позвоните нам или отправьте резюме на почту. Мы рады ответить на все вопросы!</p>
@@ -124,7 +111,6 @@
                 
                 <p style="font-size: 13px; color: #99a3b1; margin-top: 25px; margin-bottom: 0;">Новгородская область, Валдайский район, г. Валдай, ул. Победы, д. 107</p>
             </div>
-
         </div>
 
         <div class="podval">
@@ -133,9 +119,16 @@
                     <img src="./img/logo1.png" alt="Завод Юпитер" class="podval-logo">
                     <p class="podval-tekst">Оптика специального назначения</p>
                 </div>
+                <div class="podval-menu">
+                    <a href="index.html">Главная</a>
+                    <a href="products.html">Производство</a>
+                    <a href="careers.html">Вакансии</a>
+                    <a href="about.html">О нас</a>
+                </div>
                 <div class="podval-pravo">
                     <a class="podval-ssylka" href="mailto:mail@zavod-yupiter.ru">mail@zavod-yupiter.ru</a>
                     <a class="podval-ssylka" href="tel:+781666623651">8 (816) 66 2-36-51</a>
+                    <a class="podval-ssylka" href="tel:+781666621391">8 (816) 66 2-13-91</a>
                 </div>
             </div>
             <div class="podval-niz">
@@ -146,7 +139,6 @@
     </div>
 
     <script>
-        // СКРИПТ ДЛЯ МОБИЛЬНОГО МЕНЮ
         document.addEventListener('DOMContentLoaded', function() {
             const dropBtn = document.querySelector('.dropbtn');
             const dropContent = document.querySelector('.dropdown-content');
@@ -160,12 +152,9 @@
             });
         });
 
-        // СИНИЕ ЧАСТИЦЫ
         const canvas = document.getElementById('particleCanvas');
         const ctx = canvas.getContext('2d');
-        let width, height;
-        let particles = [];
-        let mouse = { x: -1000, y: -1000 };
+        let width, height, particles = [], mouse = { x: -1000, y: -1000 };
         function resize() { width = canvas.width = window.innerWidth; height = canvas.height = window.innerHeight; }
         window.addEventListener('resize', resize); resize();
         window.addEventListener('mousemove', (e) => { mouse.x = e.clientX; mouse.y = e.clientY; });

@@ -39,7 +39,7 @@ img { max-width: 100%; display: block; }
     box-shadow: 0 0 50px rgba(0,0,0,0.8);
 }
 
-/* ================= ШАПКА И ВЫПАДАЮЩЕЕ МЕНЮ ================= */
+/* ================= ШАПКА И МЕНЮ ================= */
 .shapka {
     min-height: 116px;
     width: calc(100% - 128px);
@@ -48,12 +48,16 @@ img { max-width: 100%; display: block; }
     align-items: center;
     justify-content: space-between;
     position: relative;
-    z-index: 100; /* Чтобы меню было поверх контента */
+    z-index: 100;
 }
 
 .logo-ssylka img { height: 50px; display: block; }
 
-.menu { display: flex; gap: 30px; align-items: center; }
+.menu { 
+    display: flex; 
+    gap: 30px; 
+    align-items: center;
+}
 
 .menu > a, .dropbtn {
     font-size: 14px;
@@ -62,6 +66,9 @@ img { max-width: 100%; display: block; }
     padding-bottom: 4px;
     transition: color 0.3s, border-color 0.3s;
     cursor: pointer;
+    display: flex;
+    align-items: center; 
+    gap: 6px; 
 }
 
 .menu > a:hover, .dropdown:hover .dropbtn { 
@@ -69,11 +76,28 @@ img { max-width: 100%; display: block; }
     border-color: #f17882; 
 }
 
+/* КРАСИВАЯ СТРЕЛОЧКА ВНИЗ (через CSS) */
+.dropbtn::after {
+    content: '';
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid #8b95a4;
+    transition: border-color 0.3s;
+    margin-top: 2px;
+}
+
+.dropdown:hover .dropbtn::after {
+    border-top-color: #f17882;
+}
+
 .dropdown { position: relative; display: inline-block; }
 
 .dropdown-content {
     position: absolute;
-    top: 40px;
+    top: 35px;
     left: 50%;
     transform: translate(-50%, 10px);
     background: rgba(27, 36, 51, 0.95);
@@ -98,15 +122,10 @@ img { max-width: 100%; display: block; }
 }
 
 .dropdown-col { display: flex; flex-direction: column; gap: 10px; text-align: left; }
-
 .drop-title {
-    font-size: 16px;
-    color: #99a3b1;
-    margin-bottom: 5px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    padding-bottom: 10px;
+    font-size: 16px; color: #99a3b1; margin-bottom: 5px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); padding-bottom: 10px;
 }
-
 .dropdown-col a { font-size: 14px; color: #e2e7ed; transition: color 0.2s; }
 .dropdown-col a:hover { color: #f17882; }
 
@@ -203,27 +222,16 @@ img { max-width: 100%; display: block; }
 .dot { width: 12px; height: 12px; border-radius: 50%; background: #cccccc; cursor: pointer; transition: background 0.3s; }
 .dot.active { background: #00bcd4; }
 
-/* ПАТЕНТЫ */
-.patenty { width: calc(100% - 128px); max-width: 1200px; margin: 0 auto; padding: 60px 0 80px; }
-.shapka-sekcii { text-align: center; margin-bottom: 40px; }
-.zagolovok-sekcii { font-size: 38px; margin-bottom: 15px; }
-.podzagolovok-sekcii { font-size: 16px; color: #99a3b1; }
-.setka-patentov { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; max-width: 800px; margin: 0 auto; }
-.patent-mesto { aspect-ratio: 3 / 4; border-radius: 12px; overflow: hidden; padding: 6px; background: rgba(37, 47, 62, 0.42); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.14); cursor: pointer; transition: transform 0.2s; }
-.patent-mesto:hover { transform: scale(1.05); }
-.patent-mesto img { width: 100%; height: 100%; object-fit: cover; background: #f4f4f4; border-radius: 8px; }
-
-.modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.9); z-index: 9999; backdrop-filter: blur(5px); }
-.modal img { margin: 5vh auto; max-width: 90%; max-height: 90vh; border-radius: 8px; display: block; }
-.close { position: absolute; top: 20px; right: 40px; font-size: 40px; color: #fff; cursor: pointer; font-weight: bold; }
-
 /* КОНТАКТЫ */
 .kontakty { width: calc(100% - 128px); max-width: 1200px; margin: 0 auto; border-top: 1px solid #414b5a; padding: 80px 0 100px; text-align: center; }
+.zagolovok-sekcii { font-size: 38px; margin-bottom: 15px; color: #ffffff; }
 .steklo-blok { display: flex; justify-content: space-around; max-width: 700px; margin: 40px auto 0; padding: 40px; background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(15px); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 16px; }
 .kontakt-kol { display: flex; flex-direction: column; gap: 8px; }
 .nadzagolovok { font-size: 12px; text-transform: uppercase; color: #99a3b1; margin-bottom: 8px; font-weight: 600; }
 .ssylka { font-size: 18px; font-weight: 500; }
 .ssylka:hover { color: #f17882; }
+.ssylka-serebro { font-size: 14px; color: #99a3b1; }
+.ssylka-serebro:hover { color: #f17882; }
 
 /* ОБЩАЯ ОБЕРТКА СТРАНИЦ */
 .about-wrapper { width: calc(100% - 128px); max-width: 1000px; margin: 20px auto 80px; background: #232e3d; border: 1px solid #2d3a4d; border-radius: 30px; padding: 40px; }
@@ -267,25 +275,22 @@ img { max-width: 100%; display: block; }
 details[open] .plus { transform: rotate(45deg); color: #f17882; }
 .vacancy-content { padding: 0 25px 25px 25px; color: #c8d1db; font-size: 15px; }
 
-/* ПОДВАЛ */
+/* ================= ПОДВАЛ ================= */
 .podval { border-top: 1px solid #414b5a; padding: 60px 0 0; }
-.podval-obolochka { width: calc(100% - 128px); max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding-bottom: 60px; }
-.podval-levo { display: flex; flex-direction: column; gap: 15px; }
+.podval-obolochka { width: calc(100% - 128px); max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding-bottom: 60px; gap: 30px; }
+.podval-levo { display: flex; flex-direction: column; gap: 15px; flex: 1; }
 .podval-logo { height: 60px; width: auto; }
 .podval-tekst { color: #99a3b1; font-size: 14px; }
-.podval-pravo { display: flex; flex-direction: column; gap: 12px; text-align: right; }
+.podval-menu { display: flex; flex-direction: column; gap: 15px; text-align: center; flex: 1; }
+.podval-menu a { font-size: 16px; font-weight: 500; color: #e2e7ed; transition: color 0.3s; }
+.podval-menu a:hover { color: #f17882; }
+.podval-pravo { display: flex; flex-direction: column; gap: 12px; text-align: right; flex: 1; }
 .podval-ssylka { font-size: 18px; font-weight: 500; color: #e2e7ed; }
+.podval-ssylka:hover { color: #f17882; }
 .podval-niz { width: calc(100% - 128px); max-width: 1200px; margin: 0 auto; padding: 24px 0; border-top: 1px solid #414b5a; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 15px; font-size: 14px; color: #99a3b1; }
 .btn-up { font-weight: 600; color: #99a3b1; font-size: 16px; padding: 10px 20px; border: 1px solid #414b5a; border-radius: 20px; transition: 0.3s; }
 .btn-up:hover { color: #f17882; border-color: #f17882; }
-/* ================= ФОТО В КАТЕГОРИЯХ ================= */
-.product-img {
-    width: 100%;
-    height: 300px;
-    object-fit: cover; /* Фото заполняет блок, не искажаясь */
-    border-radius: 12px;
-    display: block;
-}
+
 /* ================= АДАПТИВ ================= */
 @media (max-width: 1000px) {
     .shapka, .pervyy-ekran, .patenty, .kontakty, .podval-obolochka, .about-wrapper, .podval-niz { width: calc(100% - 64px); }
@@ -297,22 +302,11 @@ details[open] .plus { transform: rotate(45deg); color: #f17882; }
     .next { right: 20px; }
     .top-scroll-block { grid-template-columns: repeat(3, 1fr); gap: 15px; }
     .pervyy-ekran::before, .pervyy-ekran::after { width: 450px; height: 450px; }
-    .setka-patentov { max-width: 600px; gap: 15px; }
     
-    /* Меню на планшетах и телефонах */
-    .dropdown-content {
-        display: none;
-        position: absolute;
-        top: 40px; left: 50%; transform: translateX(-50%);
-        flex-direction: column;
-        width: 260px;
-        padding: 20px;
-        background: #232e3d;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.8);
-        opacity: 1; visibility: visible;
-    }
+    .dropdown-content { display: none; position: absolute; top: 35px; left: 50%; transform: translateX(-50%); flex-direction: column; width: 260px; padding: 20px; background: #232e3d; box-shadow: 0 10px 30px rgba(0,0,0,0.8); opacity: 1; visibility: visible; }
     .dropdown-content.show { display: flex; }
     .dropdown:hover .dropdown-content { transform: translateX(-50%); }
+    .podval-obolochka { flex-wrap: wrap; }
 }
 
 @media (max-width: 700px) {
@@ -326,7 +320,9 @@ details[open] .plus { transform: rotate(45deg); color: #f17882; }
     .col-photo { min-height: 360px; width: 100%; }
     .obj-left { width: 55%; transform: rotate(146deg); top: 20px; left: 0%; }
     .obj-right { width: 50%; transform: rotate(186deg); top: 150px; right: 0%; }
-    .podval-obolochka { flex-direction: column; align-items: flex-start; gap: 30px; padding-bottom: 40px; }
+    .podval-obolochka { flex-direction: column; align-items: center; gap: 40px; padding-bottom: 40px; text-align: center; }
+    .podval-pravo { text-align: center; }
+    .podval-levo { align-items: center; }
     .top-scroll-block { grid-template-columns: 1fr; gap: 15px; }
     .scroll-item { padding: 20px; }
     .slider-block { height: 500px; }
@@ -336,7 +332,6 @@ details[open] .plus { transform: rotate(45deg); color: #f17882; }
     .prev { left: 10px; }
     .next { right: 10px; }
     .pervyy-ekran::before, .pervyy-ekran::after { width: 300px; height: 300px; }
-    .setka-patentov { max-width: 100%; grid-template-columns: repeat(2, 1fr); gap: 10px; }
     .production-item summary { font-size: 16px; padding: 20px; }
     .production-content { padding: 0 20px 20px 20px; }
 }

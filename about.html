@@ -17,7 +17,7 @@
                 <a href="careers.html">Вакансии</a>
                 <a href="about.html">О нас</a>
                 <div class="dropdown">
-                    <a href="products.html" class="dropbtn">Производство ▾</a>
+                    <a href="products.html" class="dropbtn">Производство</a>
                     <div class="dropdown-content">
                         <div class="dropdown-col">
                             <p class="drop-title">Оптические приборы</p>
@@ -74,10 +74,8 @@
 
             <p class="section-title" style="margin-top: 60px;">В настоящее время</p>
 
-            <!-- ПРОСТОЙ ТЕКСТ ПРО СОВРЕМЕННОЕ ПРОИЗВОДСТВО -->
+            <!-- ПРЕДЛОЖЕНИЕ ПРО 2000-2010 УБРАНО -->
             <div class="center-text" style="line-height: 1.8;">
-                <p>С <span class="red">2000</span> по <span class="red">2010</span> год завод выпускал монокуляры и бинокли ночного видения на электронно-оптических преобразователях нулевого поколения.</p>
-                
                 <p>Сегодня «Юпитер» продолжает активно развиваться. Завод получил крупный государственный заказ на производство оптики, что позволило сохранить рабочие места и начать расширение.</p>
                 
                 <p><strong>Что завод выпускает сейчас:</strong></p>
@@ -91,7 +89,6 @@
 
                 <p>Сейчас на заводе работает около 260 человек, и в планах — увеличить штат до 430 специалистов.</p>
             </div>
-
         </div>
 
         <div class="podval">
@@ -100,9 +97,16 @@
                     <img src="./img/logo1.png" alt="Завод Юпитер" class="podval-logo">
                     <p class="podval-tekst">Оптика специального назначения</p>
                 </div>
+                <div class="podval-menu">
+                    <a href="index.html">Главная</a>
+                    <a href="products.html">Производство</a>
+                    <a href="careers.html">Вакансии</a>
+                    <a href="about.html">О нас</a>
+                </div>
                 <div class="podval-pravo">
                     <a class="podval-ssylka" href="mailto:mail@zavod-yupiter.ru">mail@zavod-yupiter.ru</a>
                     <a class="podval-ssylka" href="tel:+781666623651">8 (816) 66 2-36-51</a>
+                    <a class="podval-ssylka" href="tel:+781666621391">8 (816) 66 2-13-91</a>
                 </div>
             </div>
             <div class="podval-niz">
@@ -113,7 +117,6 @@
     </div>
 
     <script>
-        // СКРИПТ ДЛЯ МОБИЛЬНОГО МЕНЮ
         document.addEventListener('DOMContentLoaded', function() {
             const dropBtn = document.querySelector('.dropbtn');
             const dropContent = document.querySelector('.dropdown-content');
@@ -127,12 +130,9 @@
             });
         });
 
-        // СИНИЕ ЧАСТИЦЫ
         const canvas = document.getElementById('particleCanvas');
         const ctx = canvas.getContext('2d');
-        let width, height;
-        let particles = [];
-        let mouse = { x: -1000, y: -1000 };
+        let width, height, particles = [], mouse = { x: -1000, y: -1000 };
         function resize() { width = canvas.width = window.innerWidth; height = canvas.height = window.innerHeight; }
         window.addEventListener('resize', resize); resize();
         window.addEventListener('mousemove', (e) => { mouse.x = e.clientX; mouse.y = e.clientY; });
