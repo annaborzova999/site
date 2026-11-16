@@ -76,7 +76,6 @@ img { max-width: 100%; display: block; }
     border-color: #f17882; 
 }
 
-/* КРАСИВАЯ СТРЕЛОЧКА ВНИЗ (через CSS) */
 .dropbtn::after {
     content: '';
     display: inline-block;
@@ -198,12 +197,33 @@ img { max-width: 100%; display: block; }
 }
 .steklo-kartochka .zagolovok-kartochki { font-size: 32px; line-height: 1.2; margin-bottom: 30px; color: #ffffff; }
 
-.lens-details { border-bottom: 1px solid rgba(255, 255, 255, 0.1); margin-bottom: 10px; text-align: left; }
-.lens-details summary { cursor: pointer; font-size: 16px; font-weight: 500; padding: 10px 0; list-style: none; display: flex; justify-content: space-between; align-items: center; color: #ffffff; }
-.lens-details summary::-webkit-details-marker { display: none; } 
-.lens-details summary::after { content: '+'; font-size: 20px; color: #99a3b1; transition: 0.3s; }
-.lens-details[open] summary::after { content: '−'; color: #f17882; }
-.lens-details p { font-size: 14px; color: #c8d1db; padding-bottom: 15px; margin: 0; line-height: 1.6; }
+/* НОВЫЕ ССЫЛКИ В СЛАЙДЕРЕ */
+.slider-nav-link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 15px 0;
+    font-size: 16px;
+    font-weight: 500;
+    color: #ffffff;
+    transition: color 0.3s, border-color 0.3s;
+    text-align: left;
+}
+.slider-nav-link:hover { 
+    color: #f17882; 
+    border-color: #f17882;
+}
+.slider-nav-link::after {
+    content: '→';
+    font-size: 20px;
+    color: #99a3b1;
+    transition: transform 0.3s, color 0.3s;
+}
+.slider-nav-link:hover::after {
+    transform: translateX(5px);
+    color: #f17882;
+}
 
 .arrow {
     position: absolute; top: 50%; transform: translateY(-50%); z-index: 10;
